@@ -1,3 +1,5 @@
+/* Ojo con la identación , configurar tab a 4 espacios */
+
 body {
 	  font-family: sans-serif;
 }
@@ -7,16 +9,16 @@ body {
 .img-logo {
 	 width: auto;
 	 height: 100px;
-	 overflow: auto;
+	 overflow: auto; /* no va */
 }
 .img-help{
 	height: 30px;
 	float:right;
-	margin:30px 50px;
+	margin:30px 50px;  /* falta centrar bien verticalmente */
 }
 .content {
 		 width: 100%;
-		 display: inline-block;
+		 display: inline-block; /* se podria haber usado overflow: hidden para hacer clear de los floats que hay adentro */
 }
 .sidebar {
 		float:left; 
@@ -33,7 +35,7 @@ body {
 .section {
 		overflow: auto;
 }
-.article1{
+.article1{ /* la única diferencia entre article1 y article 2 es que se le agrega el margin, se podria usar una sola clase "article y por medio de algun selector avanzado darle el margin" */
 	margin-bottom: 10%;
 }
 .img-container {
@@ -42,7 +44,7 @@ body {
 	margin:0 20px;
 }
 .paragraph {
-	overflow: auto;
+	overflow: auto; 
 }
 .footer {
 		background: #A4A4A4;
@@ -83,7 +85,7 @@ h1 {
 	.img-logo {
 		 width: auto;
 		 height: 100px;
-		 overflow: auto;
+		 overflow: auto;  /* no va */
 	}
 	.img-help{
 		display: none;		
@@ -92,11 +94,11 @@ h1 {
 		text-align: center;
 		float:none;
 		width: 100%;
-		display: inline-block;
+		display: inline-block; /* no va */
 		border-right: none;
 	}
 	.list-links {
-		overflow: auto;
+		overflow: auto;  /* Es la misma situación que los links en el footer de desktop ;) usar la misma estrategia */
 		padding:0;
 	}
 	.sidebar li {
@@ -114,7 +116,7 @@ h1 {
 	.article1 {
 		margin-bottom: 5%;
 	}
-	.footer-links {
+	.footer-links { /* Resetear el padding que trae por defecto el elemento <ul> */
 		display: block;
 	}
 	.footer-links li {
