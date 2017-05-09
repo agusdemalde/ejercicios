@@ -1,4 +1,14 @@
-.link {
-	background: blue;
-	color: black;
+@import "variables";
+
+
+li {
+	list-style-type: none;
+	a {
+	color: $font-color;
+	font-size: $font-size;
+		&:focus{
+			color:white;
+		}
+	
+	}
 }

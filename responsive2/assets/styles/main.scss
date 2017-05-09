@@ -1,7 +1,57 @@
-@import "link";
+@import "variables";
 
-$rojo: red;
 
-h1 {
-	color: $rojo;
+
+header {
+	height: 150px;
+	background: $background-color;
+	font-family: $font-family;
+	h1 {
+		color:$font-color;
+		font-size:50px;
+	}
+	.logo {
+		height: 70px;
+	}
+	.menu-content {
+		text-align: right;
+		float: right;
+		.header-menu {
+			display: inline-block;
+			@import "link";
+			li {
+				float:left;
+				padding: 15px;
+				
+			}
+
+		}
+	
+	}
+
+}
+
+.content {
+	.logo {
+		float: left;
+		height: 170px;
+	}
+	.content-menu {
+		float:right;
+	}
+	.paragraph {
+		clear: both;
+	}
+	
+}
+
+.footer{
+	 ul {
+		display: inline-block;
+	}
+	.copyright{
+		text-align: center;
+		background: $font-color;
+		font-family: $font-family;
+	}
 }
