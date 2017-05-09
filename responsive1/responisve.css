@@ -1,15 +1,15 @@
 /* Ojo con la identación , configurar tab a 4 espacios */
 
 body {
-	  font-family: sans-serif;
+    font-family: sans-serif;
 }
 .header { 
-		background: #eee;
+	background: #eee;
 }
 .img-logo {
-	 width: auto;
-	 height: 100px;
-	 overflow: auto; /* no va */
+	width: auto;
+	height: 100px;
+	overflow: auto; /* no va */
 }
 .img-help{
 	height: 30px;
@@ -17,13 +17,13 @@ body {
 	margin:30px 50px;  /* falta centrar bien verticalmente */
 }
 .content {
-		 width: 100%;
-		 display: inline-block; /* se podria haber usado overflow: hidden para hacer clear de los floats que hay adentro */
+	width: 100%;
+	display: inline-block; /* se podria haber usado overflow: hidden para hacer clear de los floats que hay adentro */
 }
 .sidebar {
-		float:left; 
-		width:20%;
-		border-right: 2px solid #eee;
+	float:left; 
+	width:20%;
+	border-right: 2px solid #eee;
 }
 .sidebar li a{
    font-size: 20px;
@@ -33,7 +33,7 @@ body {
 	list-style-type: none;
 }
 .section {
-		overflow: auto;
+	overflow: auto;
 }
 .article1{ /* la única diferencia entre article1 y article 2 es que se le agrega el margin, se podria usar una sola clase "article y por medio de algun selector avanzado darle el margin" */
 	margin-bottom: 10%;
@@ -47,8 +47,8 @@ body {
 	overflow: auto; 
 }
 .footer {
-		background: #A4A4A4;
-		text-align: center;
+	background: #A4A4A4;
+	text-align: center;
 }
 h1 {
 	text-align: center;
@@ -56,12 +56,12 @@ h1 {
 	color:black;
 }
 .footer h1 {
-		   color:#fff;
-		   padding: 50px;
-		   margin: 0;
+	color:#fff;
+	padding: 50px;
+	margin: 0;
 }
 .section h3, p {
-	   	margin: 30px;
+	margin: 30px;
 }
 .section p {
    text-align: justify;
