@@ -1,6 +1,6 @@
 @import "variables";
 
-$border-bottom: 2px solid $font-color;
+$border-bottom: 3px solid $font-color;
 
 header {
 	height: 120px;
@@ -31,19 +31,21 @@ header {
 	.menu-content {
 		text-align: right;
 		float: right;
+		margin:35px 50px;
 		.header-menu {
 			display: inline-block;
 			@import "link";
 			li {
 				float:left;
-				padding: 15px;
-				border-bottom: $border-bottom;
-				&:focus {
+				a {
 					border-bottom: $border-bottom;
+					padding: 10px;
+					&:focus {
+					color:#fff;
+					border-bottom: 3px solid #fff;
+					}
 				}
-				a:focus{
-					color:white;
-				}
+				
 			}
 		}
 	}
@@ -56,29 +58,30 @@ header {
 	}
 	.content-img {
 		float: left;
-		height: 209px;
+		width:55%;
 		border: 3px solid black;
 		box-shadow: $shadow;
+
 	}
 
 	.content-menu {
 		float:right;
 		@import "link";
-		padding:0;
-		width: 35%;
-		margin:0px;
-		box-shadow: $shadow;
+		width: 25%;
+   		margin: 0 40px 0px 0px;
+   		padding: 0;
+    	box-shadow: $shadow;
 		li {
 			background: $font-color;
 			border-top: 0.5px solid lighten($background-color,20%);
 			text-align: center;
-			padding:12px;
+			padding:15px;
 			&:first-child {
 				border-top: none;
 			}
-			&:focus {
+			&:focus, a:focus { /* veeeeeeeer como mierda es */
 				background:$background-color;
-				
+				color:$font-color;
 			}
 			a {
 				color: $background-color;
@@ -86,27 +89,44 @@ header {
 				span {
 					color:#fff;
 				}
-				&:focus {
-					color:$font-color;
-				}
+				
 			}
 		}
 	}
 	.paragraph {
 		clear: both;
-		
+		font-family: $font-family;
+    	font-size: 20px;
 	}
-	
 }
 
 .footer{
-	 .footer-content ul {
+	background:$background-color;
+	height: 45%;
+	 .footer-content {
+	  .footer-menu {
 		display: inline-block;
+		margin:40px;
+		width: 20%;
 		@import "link";
+		border-left: 2px solid $font-color;
+		padding-left: 15px;
+		li {
+			padding:5px;
+			a:focus {
+				color:#fff;
+			}
+		}
+		}
+		
 	}
 	.copyright {
 		text-align: center;
 		background: $font-color;
 		font-family: $font-family;
+		color:$background-color;
+		font-size: 14px;
+    	padding: 10px;
+    	margin: 20px 40px;
 	}
 }

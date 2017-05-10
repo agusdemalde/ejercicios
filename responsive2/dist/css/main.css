@@ -1,5 +1,6 @@
 /* COLORS*/
 /*FONTS */
+/* SCREENS*/
 header {
   height: 120px;
   background: #424242;
@@ -24,27 +25,29 @@ header {
       margin-left: -13px; }
   header .menu-content {
     text-align: right;
-    float: right; }
+    float: right;
+    margin: 35px 50px; }
     header .menu-content .header-menu {
       display: inline-block;
       /* COLORS*/
-      /*FONTS */ }
+      /*FONTS */
+      /* SCREENS*/ }
       header .menu-content .header-menu li {
         list-style-type: none; }
         header .menu-content .header-menu li a {
           color: #04B4AE;
-          font-size: 13px;
+          font-size: 14px;
           text-decoration: none;
           font-weight: 600;
           font-family: sans-serif; }
       header .menu-content .header-menu li {
-        float: left;
-        padding: 15px;
-        border-bottom: 2px solid #04B4AE; }
-        header .menu-content .header-menu li:focus {
-          border-bottom: 2px solid #04B4AE; }
-        header .menu-content .header-menu li a:focus {
-          color: white; }
+        float: left; }
+        header .menu-content .header-menu li a {
+          border-bottom: 3px solid #04B4AE;
+          padding: 10px; }
+          header .menu-content .header-menu li a:focus {
+            color: #fff;
+            border-bottom: 3px solid #fff; }
 
 .content {
   margin: 40px; }
@@ -52,22 +55,23 @@ header {
     overflow: auto; }
   .content .content-img {
     float: left;
-    height: 209px;
+    width: 55%;
     border: 3px solid black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2); }
   .content .content-menu {
     float: right;
     /* COLORS*/
     /*FONTS */
+    /* SCREENS*/
+    width: 25%;
+    margin: 0 40px 0px 0px;
     padding: 0;
-    width: 35%;
-    margin: 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2); }
     .content .content-menu li {
       list-style-type: none; }
       .content .content-menu li a {
         color: #04B4AE;
-        font-size: 13px;
+        font-size: 14px;
         text-decoration: none;
         font-weight: 600;
         font-family: sans-serif; }
@@ -75,34 +79,51 @@ header {
       background: #04B4AE;
       border-top: 0.5px solid #757575;
       text-align: center;
-      padding: 12px; }
+      padding: 15px; }
       .content .content-menu li:first-child {
         border-top: none; }
-      .content .content-menu li:focus {
-        background: #424242; }
+      .content .content-menu li:focus, .content .content-menu li a:focus {
+        /* veeeeeeeer como mierda es */
+        background: #424242;
+        color: #04B4AE; }
       .content .content-menu li a {
         color: #424242; }
         .content .content-menu li a span {
           color: #fff; }
-        .content .content-menu li a:focus {
-          color: #04B4AE; }
   .content .paragraph {
-    clear: both; }
+    clear: both;
+    font-family: sans-serif;
+    font-size: 20px; }
 
-.footer .footer-content ul {
-  display: inline-block;
-  /* COLORS*/
-  /*FONTS */ }
-  .footer .footer-content ul li {
-    list-style-type: none; }
-    .footer .footer-content ul li a {
-      color: #04B4AE;
-      font-size: 13px;
-      text-decoration: none;
-      font-weight: 600;
-      font-family: sans-serif; }
-
-.footer .copyright {
-  text-align: center;
-  background: #04B4AE;
-  font-family: sans-serif; }
+.footer {
+  background: #424242;
+  height: 45%; }
+  .footer .footer-content .footer-menu {
+    display: inline-block;
+    margin: 40px;
+    width: 20%;
+    /* COLORS*/
+    /*FONTS */
+    /* SCREENS*/
+    border-left: 2px solid #04B4AE;
+    padding-left: 15px; }
+    .footer .footer-content .footer-menu li {
+      list-style-type: none; }
+      .footer .footer-content .footer-menu li a {
+        color: #04B4AE;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        font-family: sans-serif; }
+    .footer .footer-content .footer-menu li {
+      padding: 5px; }
+      .footer .footer-content .footer-menu li a:focus {
+        color: #fff; }
+  .footer .copyright {
+    text-align: center;
+    background: #04B4AE;
+    font-family: sans-serif;
+    color: #424242;
+    font-size: 14px;
+    padding: 10px;
+    margin: 20px 40px; }

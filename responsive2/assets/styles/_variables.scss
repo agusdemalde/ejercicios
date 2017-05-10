@@ -3,11 +3,27 @@
 
 $font-color: #04B4AE;
 $background-color: #424242;
-$shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2);
 
 
 /*FONTS */
-$font-size: 13px;
+$font-size: 14px;
 $font-family: sans-serif;
 $font-weight: 600;
 
+
+/* SCREENS*/
+$tablet-width: 768px;
+$mobile-width: 480px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width})  {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width})  {
+    @content;
+  }
+}
