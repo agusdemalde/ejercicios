@@ -1,17 +1,32 @@
 @import "variables";
 
-
+$border-bottom: 2px solid $font-color;
 
 header {
-	height: 150px;
+	height: 120px;
 	background: $background-color;
 	font-family: $font-family;
-	h1 {
-		color:$font-color;
-		font-size:50px;
-	}
-	.logo {
-		height: 70px;
+	.logo-content {
+		display: inline-block;
+		margin-left: 30px;
+		p {
+			color:$font-color;
+			font-size:40px;
+			float: left;
+		}
+		.title-2 {
+			position: relative;
+    		z-index: 1;
+		}
+		.logo {
+			height: 70px;
+		    position: relative;
+		    float: left;
+		    z-index: 2;
+			margin-top: 28px;
+    		margin-right: -16px;
+   			margin-left: -13px;
+		}
 	}
 	.menu-content {
 		text-align: right;
@@ -22,34 +37,74 @@ header {
 			li {
 				float:left;
 				padding: 15px;
-				
+				border-bottom: $border-bottom;
+				&:focus {
+					border-bottom: $border-bottom;
+				}
+				a:focus{
+					color:white;
+				}
 			}
-
 		}
-	
 	}
-
 }
 
 .content {
-	.logo {
-		float: left;
-		height: 170px;
+	margin: 40px;
+	.subcontent {
+		overflow: auto;
 	}
+	.content-img {
+		float: left;
+		height: 209px;
+		border: 3px solid black;
+		box-shadow: $shadow;
+	}
+
 	.content-menu {
 		float:right;
+		@import "link";
+		padding:0;
+		width: 35%;
+		margin:0px;
+		box-shadow: $shadow;
+		li {
+			background: $font-color;
+			border-top: 0.5px solid lighten($background-color,20%);
+			text-align: center;
+			padding:12px;
+			&:first-child {
+				border-top: none;
+			}
+			&:focus {
+				background:$background-color;
+				
+			}
+			a {
+				color: $background-color;
+			
+				span {
+					color:#fff;
+				}
+				&:focus {
+					color:$font-color;
+				}
+			}
+		}
 	}
 	.paragraph {
 		clear: both;
+		
 	}
 	
 }
 
 .footer{
-	 ul {
+	 .footer-content ul {
 		display: inline-block;
+		@import "link";
 	}
-	.copyright{
+	.copyright {
 		text-align: center;
 		background: $font-color;
 		font-family: $font-family;
