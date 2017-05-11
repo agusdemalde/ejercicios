@@ -1,21 +1,21 @@
 /* COLORS*/
 /*FONTS */
 /* SCREENS*/
-header {
+.header {
   height: 120px;
   background: #424242;
   font-family: sans-serif; }
-  header .logo-content {
-    display: inline-block;
-    margin-left: 30px; }
-    header .logo-content p {
+  .header .logo-content {
+    margin-left: 25px;
+    width: 35%; }
+    .header .logo-content h2 {
       color: #04B4AE;
-      font-size: 40px;
+      font-size: 2.5em;
       float: left; }
-    header .logo-content .title-2 {
+    .header .logo-content .title-2 {
       position: relative;
       z-index: 1; }
-    header .logo-content .logo {
+    .header .logo-content .logo {
       height: 70px;
       position: relative;
       float: left;
@@ -23,36 +23,35 @@ header {
       margin-top: 28px;
       margin-right: -16px;
       margin-left: -13px; }
-  header .menu-content {
+  .header .menu-content {
     text-align: right;
     float: right;
-    margin: 35px 50px; }
-    header .menu-content .header-menu {
+    margin: 35px 50px 35px 0px; }
+    .header .menu-content .header-menu {
       display: inline-block;
+      padding: 0px;
       /* COLORS*/
       /*FONTS */
       /* SCREENS*/ }
-      header .menu-content .header-menu li {
+      .header .menu-content .header-menu li {
         list-style-type: none; }
-        header .menu-content .header-menu li a {
+        .header .menu-content .header-menu li a {
           color: #04B4AE;
-          font-size: 14px;
+          font-size: 0.8em;
           text-decoration: none;
           font-weight: 600;
           font-family: sans-serif; }
-      header .menu-content .header-menu li {
+      .header .menu-content .header-menu li {
         float: left; }
-        header .menu-content .header-menu li a {
+        .header .menu-content .header-menu li a {
           border-bottom: 3px solid #04B4AE;
           padding: 10px; }
-          header .menu-content .header-menu li a:focus {
+          .header .menu-content .header-menu li a:focus {
             color: #fff;
             border-bottom: 3px solid #fff; }
 
 .content {
   margin: 40px; }
-  .content .subcontent {
-    overflow: auto; }
   .content .content-img {
     float: left;
     width: 55%;
@@ -71,7 +70,7 @@ header {
       list-style-type: none; }
       .content .content-menu li a {
         color: #04B4AE;
-        font-size: 14px;
+        font-size: 0.8em;
         text-decoration: none;
         font-weight: 600;
         font-family: sans-serif; }
@@ -111,7 +110,7 @@ header {
       list-style-type: none; }
       .footer .footer-content .footer-menu li a {
         color: #04B4AE;
-        font-size: 14px;
+        font-size: 0.8em;
         text-decoration: none;
         font-weight: 600;
         font-family: sans-serif; }
@@ -127,3 +126,64 @@ header {
     font-size: 14px;
     padding: 10px;
     margin: 20px 40px; }
+
+@media only screen and (max-width: 768px) {
+  .header .logo-content {
+    margin-left: 25px;
+    width: 25%;
+    float: left; }
+    .header .logo-content h2 {
+      display: inline-block;
+      margin: 35px 0px 0px 0px;
+      font-size: 1.2em;
+      float: none; }
+    .header .logo-content .title-2 {
+      color: #fff;
+      display: block;
+      margin-top: 0;
+      position: static; }
+    .header .logo-content .logo {
+      height: auto;
+      width: 50%;
+      margin: 30px 0px 0px 0px;
+      position: static; }
+  .header .menu-content {
+    width: 55%; }
+    .header .menu-content .header-menu li a {
+      border-bottom: none;
+      font-size: 0.8em; }
+      .header .menu-content .header-menu li a:focus {
+        border-bottom: none; }
+  .content {
+    margin: 0px; }
+    .content .subcontent {
+      overflow: none; }
+    .content .content-img {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      float: none; }
+    .content .content-menu {
+      float: none;
+      width: 100%;
+      margin: 0 40px 0px 0px;
+      padding: 0;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2); }
+    .content .paragraph {
+      font-family: sans-serif;
+      font-size: 1.3em;
+      margin: 25px; }
+  .footer {
+    height: 100%; }
+    .footer .footer-content .footer-menu {
+      margin: 40px;
+      width: auto;
+      border-left: none; }
+    .footer .copyright {
+      text-align: center;
+      background: #424242;
+      font-family: sans-serif;
+      color: #fff;
+      font-size: 0.8em;
+      padding: 10px;
+      margin: 10px; } }

@@ -4,10 +4,10 @@
 $font-color: #04B4AE;
 $background-color: #424242;
 $shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2);
-
+$border-bottom: 3px solid $font-color;
 
 /*FONTS */
-$font-size: 14px;
+$font-size: 0.8em;
 $font-family: sans-serif;
 $font-weight: 600;
 
@@ -16,14 +16,12 @@ $font-weight: 600;
 $tablet-width: 768px;
 $mobile-width: 480px;
 
-@mixin tablet {
-  @media (min-width: #{$tablet-width})  {
-    @content;
-  }
-}
+
+  
+
 
 @mixin mobile {
-  @media (min-width: #{$mobile-width})  {
+  @media  only screen and  (max-width: #{$mobile-width})  {
     @content;
   }
 }
