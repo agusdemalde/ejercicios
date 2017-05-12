@@ -1,15 +1,23 @@
 
 /* COLORS*/
 
-$font-color: #04B4AE;
-$background-color: #424242;
+$secondary-color: #04B4AE;
+$primary-color: #424242;
 $shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2);
-$border-bottom: 3px solid $font-color;
+$border-bottom: 3px solid $secondary-color;
+$white:#fff;
 
 /*FONTS */
-$font-size: 0.8em;
-$font-family: sans-serif;
+$font-size-title-large: 2.5em;
+$font-size-title-medium: 1em;
+$font-size-title-small:1em;
+$font-size-content-large: 0.9em;
+$font-size-content-medium:0.8em;
+$font-size-content-small:0.7em;
+$font-size-paragraph:1.2em;
+$font-family: 'Varela' , sans-serif;
 $font-weight: 600;
+$font-size-icon:1.8em;
 
 
 /* SCREENS*/
@@ -18,10 +26,3 @@ $mobile-width: 480px;
 
 
   
-
-
-@mixin mobile {
-  @media  only screen and  (max-width: #{$mobile-width})  {
-    @content;
-  }
-}

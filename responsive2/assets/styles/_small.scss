@@ -1,1 +1,81 @@
-_small.scss
+
+.header {
+	height: 10%;
+	.logo-content {
+		margin-left: 25px;
+		width: 50%;
+		float: left;
+		h2 {
+			display: inline-block;
+			margin: 20px 0px 0px 0px;
+			font-size: $font-size-title-small;
+			float:none;
+		}
+		.title-2 {
+			color:$white;
+			display: inline-block;
+			margin-top: 0;
+		}
+		.logo {
+			height: auto;
+			width: 30%;
+    		margin: 9px 0px 0px 0px;
+    		z-index: 0;
+		}
+	}
+	.menu-content {
+		width: 10%;
+		float: right;
+    	margin: 5px 20px;
+		.header-menu {
+			display:none;
+		}
+		.collapse {
+			display: initial;
+			float:right;
+			color: $secondary-color;
+			font-size: $font-size-icon;
+			text-decoration: none;
+	    	margin-top: 2px;
+		}
+	}
+}
+.content {
+	margin: 0px;
+	overflow: auto;
+	.subcontent {
+		overflow: none;
+		.content-img {
+			width:800px;
+			border: none;
+			box-shadow: none;
+			float:none;
+			margin: 0px 0px 0px -335px;
+		}
+		.content-menu {
+			float:none;
+			width: 100%;
+			margin: 0 ;
+			padding: 0;
+			box-shadow: $shadow;
+			li {
+				padding: 0;
+				a {
+					font-size:$font-size-content-medium;
+					padding: 14px;
+				}
+			}
+		}
+	}
+		.paragraph {
+		   	font-size: 1.2em;
+   		}
+}
+.footer {
+	.footer-menu {
+		&:nth-child(2) {
+			display: none;
+		}
+	}
+}
+		

@@ -1,15 +1,14 @@
 @import "variables";
 
 
+
 li {
 	list-style-type: none;
 	a {
-	color: $font-color;
-	font-size: $font-size;
-	text-decoration: none;
-	font-weight: $font-weight;
-	font-family: $font-family;
-		
-	
+		color: $secondary-color;
+		font-size: $font-size-content-large;
+		text-decoration: none;
+		font-weight: $font-weight;
+		font-family: $font-family;
 	}
 }

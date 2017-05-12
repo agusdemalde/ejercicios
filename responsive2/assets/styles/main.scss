@@ -1,18 +1,13 @@
 @import "variables";
 
 
-$tablet-width: 768px;
-$mobile-width:480px;
-
-
-
 @import "large";
 
 @media  only screen and (max-width: $tablet-width)  {
    @import "medium";
   }
-@media only screen and (max-width: mobile-width) {
-
+@media only screen and (max-width: $mobile-width) {
+	@import "small";
 }
 
 
