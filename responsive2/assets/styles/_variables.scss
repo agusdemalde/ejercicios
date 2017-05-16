@@ -5,19 +5,24 @@ $secondary-color: #04B4AE;
 $primary-color: #424242;
 $shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2);
 $border-bottom: 3px solid $secondary-color;
-$white:#fff;
+$white: #fff;
+$black: #000000;
+$border-content:  0.5px solid lighten($primary-color,20%);
+$border-content-focus: 3px solid $white;
+$border-image: 3px solid $black;
+$border-menu-footer: 2px solid $secondary-color;
 
 /*FONTS */
-$font-size-title-large: 2.5em;
-$font-size-title-medium: 1em;
-$font-size-title-small:1em;
-$font-size-content-large: 0.9em;
-$font-size-content-medium:0.8em;
-$font-size-content-small:0.7em;
-$font-size-paragraph:1.2em;
+$font-size-title-large: 40px;
+$font-size-title-medium: 16px;
+$font-size-menu-large: 18px;
+$font-size-content-large: 15px;
+$font-size-content-medium: 13px;
+$font-size-content-small: 11px;
+$font-size-paragraph: 19px;
 $font-family: 'Varela' , sans-serif;
 $font-weight: 600;
-$font-size-icon:1.8em;
+$font-size-icon: 29px;
 
 
 /* SCREENS*/

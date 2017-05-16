@@ -1,129 +1,103 @@
-	.header {
-		height: 20%;
-		background: $primary-color;
-		font-family: $font-family;
-		.logo-content {
-			margin-left: 25px;
-			width: 35%;
-			h2 {
-				color:$secondary-color;
-				font-size: $font-size-title-large;
-				float: left;
-			}
-			.title-2 {
-				position: relative;
-	    		z-index: 1;
-			}
-			.logo {
-				height: 70px;
-			    position: relative;
-			    float: left;
-			    z-index: 2;
-				margin-top: 28px;
-	    		margin-right: -16px;
-	   			margin-left: -13px;
-			}
-		}
-		.menu-content { 
-			text-align: right;
-			float: right;
-			margin: 35px 50px 35px 0px;
-			.header-menu {
-				display: inline-block;
-				padding: 0px;
-				@import "link";
-				li {
-					float:left;
-					a {
-						border-bottom: $border-bottom;
-						padding: 10px;
-						&:focus {
-						color:$white;
-						border-bottom: 3px solid $white;
-						}
-					}
-				}
-			}
-			.collapse  {
-				display: none;
-			}
-		}
-	}
-	.content {
-		margin: 40px;
-		.subcontent {
-			overflow: auto;
-			.content-img {
-			float: left;
-				width:55%;
-				border: 3px solid black;
-				box-shadow: $shadow;
-			}
-			.content-menu {
-				float:right;
-				@import "link";
-				width: 25%;
-		   		margin: 0 40px 0px 0px;
-		   		padding: 0;
-		    	box-shadow: $shadow;
-				li { 
-					background: $secondary-color;
-					border-top: 0.5px solid lighten($primary-color,20%);
-					text-align: center;
-					display: block;
-					&:first-child {
-						border-top: none;
-					}
-					a {
-						color: $primary-color;
-						padding:16px;
-						display: block;
-						&:focus {
-							background:$primary-color;
-							color:$secondary-color;
-						}
-						span {
-							color:$white;
-						}
-						
-					}
-				}
-			}
-		}
-		.paragraph {
-			clear: both;
-			font-family: $font-family;
-	    	font-size: 20px;
-		}
-	}
-
-	.footer{
-		background:$primary-color;
-		height: 45%;
-		.footer-content {
-		  	.footer-menu {
-				display: inline-block;
-				margin:40px;
-				width: 20%;
-				@import "link";
-				border-left: 2px solid $secondary-color;
-				padding-left: 15px;
-				li {
-					padding:5px;
-					a:focus {
-						color:$white;
-					}
-				}
-			}
-		}
-		.copyright {
-			text-align: center;
-			background: $secondary-color;
-			font-family: $font-family;
-			color:$primary-color;
-			font-size: $font-size-content-large;
-	    	padding: 10px;
-	    	margin: 20px 40px;
-		}
-	}
+.header {
+    height: 16%;
+    .logo-content {
+        width: 35%;
+        margin: 30px 0 0 15px;
+        h2 {
+            margin: 5px 0 0 0;
+            font-size: $font-size-title-large;
+            float: left;
+            position: absolute;
+        }
+        .title-2 {
+            color: $secondary-color;
+            z-index: 1;
+            margin: 5px 0 0 224px;
+        }
+        .logo {
+            position: absolute;
+            z-index: 2;
+            width: 93px;
+            margin: 5px 0 0 143px;
+        }
+    }
+        .menu-content { 
+            text-align: right;
+            float: right;
+            width: 30%;
+            margin: 30px 70px 0 0;
+            .header-menu {
+                display: inline-block;
+                padding: 0;
+                @import "link";
+                li {
+                    float: left;
+                    a {
+                        border-bottom: $border-bottom;
+                        padding: 10px;
+                        font-size: $font-size-content-large;
+                        &:focus {
+                        color: $white;
+                        border-bottom: $border-content-focus;
+                        }
+                    }
+                }
+            }
+            .collapse  {
+                display: none;
+            }
+        }
+    }
+    .content {
+        margin: 40px;
+        .subcontent {
+            overflow: auto;
+            .content-img {
+                float: left;
+                width: 55%;
+                border: $border-image;
+                box-shadow: $shadow;
+            }
+            .content-menu {
+                float: right;
+                width: 25%;
+                margin: 0 40px 0 0;
+                li { 
+                    a {
+                        font-size: $font-size-content-large;
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+        .paragraph {
+            clear: both;
+            font-size: 27px;
+            margin: 20px 0;
+        }
+    }
+    .footer{
+        .footer-content {
+            .footer-menu {
+                width: 25%;
+                margin: 40px 0px 40px 50px;
+                border-left: $border-menu-footer;
+                li {
+                    padding-left: 20px;
+                    a {
+                        font-size: $font-size-content-large;
+                    }
+                }
+            }
+        }
+        .copyright {
+            text-align: center;
+            background: $secondary-color;
+            font-family: $font-family;
+            color: $primary-color;
+            font-size: $font-size-content-large;
+            padding: 10px;
+            margin: 20px 40px;
+        }
+    }
 
