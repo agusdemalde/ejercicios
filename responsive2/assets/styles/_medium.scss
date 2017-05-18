@@ -1,24 +1,23 @@
 .header {
-    height: 16%;
+    padding: 15px;
     .logo-content {
         width: 25%;
         h2 {
-        margin: 35px 0 0 0;
+        margin: 0;
         font-size: $font-size-title-medium;
         float: none;
         }
         .title-2 {
             display: block;
-            position: static;
         }
         .logo {
             width: 40%;
-            margin: 30px 0 0 0;
+            margin: 0;
             }
         }
     .menu-content {
         width: 65%;
-        margin: 20px 10px;
+        margin: 0;
         .header-menu {
             display: inline-block;
             padding: 0;
@@ -41,8 +40,8 @@
 .content {
     .subcontent {
         .content-img {
-            width: 100%;
             margin: 0;
+            background-size: cover;
             }
         .content-menu {
             margin: 0 40px 0 0;
@@ -60,7 +59,6 @@
 .footer {
     .footer-content {
         .footer-menu {
-            margin: 20px 0 10px 5px;
             width: 30%;
             padding-left: 0;
             &:nth-child(2) {

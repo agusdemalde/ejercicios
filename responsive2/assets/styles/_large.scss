@@ -1,8 +1,8 @@
 .header {
-    height: 16%;
+    padding: 30px;
     .logo-content {
         width: 35%;
-        margin: 30px 0 0 15px;
+        margin: 0;
         h2 {
             margin: 5px 0 0 0;
             font-size: $font-size-title-large;
@@ -14,18 +14,18 @@
             z-index: 1;
             margin: 5px 0 0 224px;
         }
-        .logo {
+        .logo { /* ver que conviene hacer en este caso */
             position: absolute;
             z-index: 2;
-            width: 93px;
+            width: 93px; 
             margin: 5px 0 0 143px;
         }
     }
         .menu-content { 
             text-align: right;
             float: right;
-            width: 30%;
-            margin: 30px 70px 0 0;
+            width: 40%;
+            margin: 0;
             .header-menu {
                 display: inline-block;
                 padding: 0;
@@ -35,7 +35,6 @@
                     a {
                         border-bottom: $border-bottom;
                         padding: 10px;
-                        font-size: $font-size-content-large;
                         &:focus {
                         color: $white;
                         border-bottom: $border-content-focus;
@@ -49,43 +48,42 @@
         }
     }
     .content {
-        margin: 40px;
+        padding: 40px;
         .subcontent {
-            overflow: auto;
+            overflow: hidden;
             .content-img {
                 float: left;
-                width: 55%;
+                width: 60%;
                 border: $border-image;
                 box-shadow: $shadow;
+                background-position-x: center;
             }
             .content-menu {
                 float: right;
-                width: 25%;
-                margin: 0 40px 0 0;
+                width: 30%;
+                margin: 0;
                 li { 
                     a {
-                        font-size: $font-size-content-large;
-                        padding: 20px;
+                        font-size: $font-size-content-medium;
+                        padding: 18px;
                     }
                 }
             }
         }
         .paragraph {
             clear: both;
-            font-size: 27px;
-            margin: 20px 0;
+            font-size: $font-size-paragraph-large;
+            margin: 20px 0 0 0;
         }
     }
     .footer{
         .footer-content {
             .footer-menu {
-                width: 25%;
-                margin: 40px 0px 40px 50px;
                 border-left: $border-menu-footer;
                 li {
                     padding-left: 20px;
                     a {
-                        font-size: $font-size-content-large;
+                        font-size: $font-size-content-medium;
                     }
                 }
             }

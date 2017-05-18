@@ -1,34 +1,31 @@
 
 .header {
-    height: 10%;
+    overflow: hidden;
+    padding: 13px;
     background: $primary-color;
     font-family: $font-family;
     .logo-content {
-        margin-left: 25px;
         width: 50%;
         float: left;
         h2 {
             display: inline-block;
-            margin: 20px 0 0 0;
+            margin-top: 5px;
             color: $secondary-color;
             font-size: $font-size-title-medium;
         }
         .title-2 {
             color: $white;
             display: inline-block;
-            margin-top: 0;
         }
         .logo {
-            height: auto;
             float: left;
             width: 30%;
-            margin: 9px 0 0 0;
+            margin: 0;
         }
     }
     .menu-content {
         width: 10%;
         float: right;
-        margin: 5px 20px;
         .header-menu {
             display: none;
         }
@@ -38,17 +35,17 @@
             color: $secondary-color;
             font-size: $font-size-icon;
             text-decoration: none;
-            margin-top: 2px;
         }
     }
 }
 .content {
     margin: 0;
-    overflow: auto;
+    overflow: hidden;
     .subcontent {
         .content-img {
-            width: 800px;
-            margin: 0 0 0 -335px;
+            height: 265px;
+            background: url("../../assets/images/scenery.png") no-repeat;
+            background-position-x: right;
         }
         .content-menu {
             width: 100%;
@@ -87,15 +84,15 @@
     }
 }
 .footer {
+    overflow: hidden;
     background:$primary-color;
-    height: 40%;
     .footer-content{
         text-align: center;
+        padding: 20px;
         .footer-menu {
             text-align: left;
             display: inline-block;
-            margin: 40px;
-            width: auto;
+            width: 30%;
             @import "link";
             padding-left: 15px;
             border-left: none;
@@ -119,7 +116,7 @@
         font-family: $font-family;
         color: $white;
         font-size: $font-size-content-medium;
-        margin: 10px;
+        padding: 20px;
     }
 }
         

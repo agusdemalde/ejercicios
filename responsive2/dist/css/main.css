@@ -2,31 +2,28 @@
 /*FONTS */
 /* SCREENS*/
 .header {
-  height: 10%;
+  overflow: hidden;
+  padding: 13px;
   background: #424242;
   font-family: "Varela", sans-serif; }
   .header .logo-content {
-    margin-left: 25px;
     width: 50%;
     float: left; }
     .header .logo-content h2 {
       display: inline-block;
-      margin: 20px 0 0 0;
+      margin-top: 5px;
       color: #04B4AE;
       font-size: 16px; }
     .header .logo-content .title-2 {
       color: #fff;
-      display: inline-block;
-      margin-top: 0; }
+      display: inline-block; }
     .header .logo-content .logo {
-      height: auto;
       float: left;
       width: 30%;
-      margin: 9px 0 0 0; }
+      margin: 0; }
   .header .menu-content {
     width: 10%;
-    float: right;
-    margin: 5px 20px; }
+    float: right; }
     .header .menu-content .header-menu {
       display: none; }
     .header .menu-content .collapse {
@@ -34,15 +31,15 @@
       float: right;
       color: #04B4AE;
       font-size: 29px;
-      text-decoration: none;
-      margin-top: 2px; }
+      text-decoration: none; }
 
 .content {
   margin: 0;
-  overflow: auto; }
+  overflow: hidden; }
   .content .subcontent .content-img {
-    width: 800px;
-    margin: 0 0 0 -335px; }
+    height: 265px;
+    background: url("../../assets/images/scenery.png") no-repeat;
+    background-position-x: right; }
   .content .subcontent .content-menu {
     width: 100%;
     margin: 0;
@@ -78,15 +75,15 @@
     margin: 30px; }
 
 .footer {
-  background: #424242;
-  height: 40%; }
+  overflow: hidden;
+  background: #424242; }
   .footer .footer-content {
-    text-align: center; }
+    text-align: center;
+    padding: 20px; }
     .footer .footer-content .footer-menu {
       text-align: left;
       display: inline-block;
-      margin: 40px;
-      width: auto;
+      width: 30%;
       padding-left: 15px;
       border-left: none; }
       .footer .footer-content .footer-menu li {
@@ -111,26 +108,25 @@
     font-family: "Varela", sans-serif;
     color: #fff;
     font-size: 13px;
-    margin: 10px; }
+    padding: 20px; }
 
 @media only screen and (min-width: 480px) {
   .header {
-    height: 16%; }
+    padding: 15px; }
     .header .logo-content {
       width: 25%; }
       .header .logo-content h2 {
-        margin: 35px 0 0 0;
+        margin: 0;
         font-size: 16px;
         float: none; }
       .header .logo-content .title-2 {
-        display: block;
-        position: static; }
+        display: block; }
       .header .logo-content .logo {
         width: 40%;
-        margin: 30px 0 0 0; }
+        margin: 0; }
     .header .menu-content {
       width: 65%;
-      margin: 20px 10px; }
+      margin: 0; }
       .header .menu-content .header-menu {
         display: inline-block;
         padding: 0; }
@@ -151,8 +147,8 @@
       .header .menu-content .collapse {
         display: none; }
   .content .subcontent .content-img {
-    width: 100%;
-    margin: 0; }
+    margin: 0;
+    background-size: cover; }
   .content .subcontent .content-menu {
     margin: 0 40px 0 0; }
     .content .subcontent .content-menu li a {
@@ -160,7 +156,6 @@
   .content .paragraph {
     margin: 25px; }
   .footer .footer-content .footer-menu {
-    margin: 20px 0 10px 5px;
     width: 30%;
     padding-left: 0; }
     .footer .footer-content .footer-menu:nth-child(2) {
@@ -168,10 +163,10 @@
 
 @media only screen and (min-width: 768px) {
   .header {
-    height: 16%; }
+    padding: 30px; }
     .header .logo-content {
       width: 35%;
-      margin: 30px 0 0 15px; }
+      margin: 0; }
       .header .logo-content h2 {
         margin: 5px 0 0 0;
         font-size: 40px;
@@ -182,6 +177,7 @@
         z-index: 1;
         margin: 5px 0 0 224px; }
       .header .logo-content .logo {
+        /* ver que conviene hacer en este caso */
         position: absolute;
         z-index: 2;
         width: 93px;
@@ -189,8 +185,8 @@
     .header .menu-content {
       text-align: right;
       float: right;
-      width: 30%;
-      margin: 30px 70px 0 0; }
+      width: 40%;
+      margin: 0; }
       .header .menu-content .header-menu {
         display: inline-block;
         padding: 0; }
@@ -206,41 +202,39 @@
           float: left; }
           .header .menu-content .header-menu li a {
             border-bottom: 3px solid #04B4AE;
-            padding: 10px;
-            font-size: 15px; }
+            padding: 10px; }
             .header .menu-content .header-menu li a:focus {
               color: #fff;
               border-bottom: 3px solid #fff; }
       .header .menu-content .collapse {
         display: none; }
   .content {
-    margin: 40px; }
+    padding: 40px; }
     .content .subcontent {
-      overflow: auto; }
+      overflow: hidden; }
       .content .subcontent .content-img {
         float: left;
-        width: 55%;
+        width: 60%;
         border: 3px solid #000000;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2); }
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+        background-position-x: center; }
       .content .subcontent .content-menu {
         float: right;
-        width: 25%;
-        margin: 0 40px 0 0; }
+        width: 30%;
+        margin: 0; }
         .content .subcontent .content-menu li a {
-          font-size: 15px;
-          padding: 20px; }
+          font-size: 13px;
+          padding: 18px; }
     .content .paragraph {
       clear: both;
-      font-size: 27px;
-      margin: 20px 0; }
+      font-size: 25px;
+      margin: 20px 0 0 0; }
   .footer .footer-content .footer-menu {
-    width: 25%;
-    margin: 40px 0px 40px 50px;
     border-left: 2px solid #04B4AE; }
     .footer .footer-content .footer-menu li {
       padding-left: 20px; }
       .footer .footer-content .footer-menu li a {
-        font-size: 15px; }
+        font-size: 13px; }
   .footer .copyright {
     text-align: center;
     background: #04B4AE;
