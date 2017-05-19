@@ -1,0 +1,13 @@
+@import "variables";
+
+@import "small";
+
+
+@media  only screen and (min-width: $mobile-width)  {
+   @import "medium";
+  }
+@media only screen and (min-width: $tablet-width) {
+	@import "large";
+}
+
+

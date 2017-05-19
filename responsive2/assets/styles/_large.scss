@@ -1,0 +1,101 @@
+.header {
+    padding: 30px;
+    .logo-content {
+        width: 35%;
+        margin: 0;
+        h2 {
+            margin: 5px 0 0 0;
+            font-size: $font-size-title-large;
+            float: left;
+            position: absolute;
+        }
+        .title-2 {
+            color: $secondary-color;
+            z-index: 1;
+            margin: 5px 0 0 224px;
+        }
+        .logo { /* ver que conviene hacer en este caso */
+            position: absolute;
+            z-index: 2;
+            width: 93px; 
+            margin: 5px 0 0 143px;
+        }
+    }
+        .menu-content { 
+            text-align: right;
+            float: right;
+            width: 40%;
+            margin: 0;
+            .header-menu {
+                display: inline-block;
+                padding: 0;
+                @import "link";
+                li {
+                    float: left;
+                    a {
+                        border-bottom: $border-bottom;
+                        padding: 10px;
+                        &:focus {
+                        color: $white;
+                        border-bottom: $border-content-focus;
+                        }
+                    }
+                }
+            }
+            .collapse  {
+                display: none;
+            }
+        }
+    }
+    .content {
+        padding: 40px;
+        .subcontent {
+            overflow: hidden;
+            .content-img {
+                float: left;
+                width: 60%;
+                border: $border-image;
+                box-shadow: $shadow;
+                background-position-x: center;
+            }
+            .content-menu {
+                float: right;
+                width: 30%;
+                margin: 0;
+                li { 
+                    a {
+                        font-size: $font-size-content-medium;
+                        padding: 18px;
+                    }
+                }
+            }
+        }
+        .paragraph {
+            clear: both;
+            font-size: $font-size-paragraph-large;
+            margin: 20px 0 0 0;
+        }
+    }
+    .footer{
+        .footer-content {
+            .footer-menu {
+                border-left: $border-menu-footer;
+                li {
+                    padding-left: 20px;
+                    a {
+                        font-size: $font-size-content-medium;
+                    }
+                }
+            }
+        }
+        .copyright {
+            text-align: center;
+            background: $secondary-color;
+            font-family: $font-family;
+            color: $primary-color;
+            font-size: $font-size-content-large;
+            padding: 10px;
+            margin: 20px 40px;
+        }
+    }
+

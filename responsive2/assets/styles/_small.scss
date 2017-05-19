@@ -1,0 +1,122 @@
+
+.header {
+    overflow: hidden;
+    padding: 13px;
+    background: $primary-color;
+    font-family: $font-family;
+    .logo-content {
+        width: 50%;
+        float: left;
+        h2 {
+            display: inline-block;
+            margin-top: 5px;
+            color: $secondary-color;
+            font-size: $font-size-title-medium;
+        }
+        .title-2 {
+            color: $white;
+            display: inline-block;
+        }
+        .logo {
+            float: left;
+            width: 30%;
+            margin: 0;
+        }
+    }
+    .menu-content {
+        width: 10%;
+        float: right;
+        .header-menu {
+            display: none;
+        }
+        .collapse {
+            display: initial;
+            float: right;
+            color: $secondary-color;
+            font-size: $font-size-icon;
+            text-decoration: none;
+        }
+    }
+}
+.content {
+    margin: 0;
+    overflow: hidden;
+    .subcontent {
+        .content-img {
+            height: 265px;
+            background: url("../../assets/images/scenery.png") no-repeat;
+            background-position-x: right;
+        }
+        .content-menu {
+            width: 100%;
+            margin: 0 ;
+            padding: 0;
+            box-shadow: $shadow;
+            @import "link";
+            li { 
+                
+                border-top: $border-content;
+                text-align: center;
+                display: block;
+                &:first-child {
+                    border-top: none;
+                }
+                a {
+                    background: $secondary-color;
+                    color: $primary-color;
+                    padding: 14px;
+                    display: block;
+                    &:focus {
+                        background: $primary-color;
+                        color: $secondary-color;
+                    }
+                    span {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .paragraph {
+        font-size: $font-size-paragraph;
+        font-family: $font-family;
+        margin: 30px;
+    }
+}
+.footer {
+    overflow: hidden;
+    background:$primary-color;
+    .footer-content{
+        text-align: center;
+        padding: 20px;
+        .footer-menu {
+            text-align: left;
+            display: inline-block;
+            width: 30%;
+            @import "link";
+            padding-left: 15px;
+            border-left: none;
+            li {
+                padding: 5px;
+                a {
+                    font-size: $font-size-content-small;
+                    a:focus {
+                        color: $white;
+                    } 
+                }
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+        }   
+    }
+    .copyright {
+        text-align: center;
+        background: $primary-color;
+        font-family: $font-family;
+        color: $white;
+        font-size: $font-size-content-medium;
+        padding: 20px;
+    }
+}
+        
