@@ -170,7 +170,8 @@
       .header .logo-content h2 {
         margin: 5px 0 0 0;
         font-size: 40px;
-        float: left;
+        float: none;
+        /* nunca juntos float ocn position:absolute*/
         position: absolute; }
       .header .logo-content .title-2 {
         color: #04B4AE;
@@ -179,6 +180,7 @@
       .header .logo-content .logo {
         /* ver que conviene hacer en este caso */
         position: absolute;
+        /* para posicionar uso left, top, right bottom. No margin*/
         z-index: 2;
         width: 93px;
         margin: 5px 0 0 143px; }
@@ -186,6 +188,7 @@
       text-align: right;
       float: right;
       width: 40%;
+      /* auto*/
       margin: 0; }
       .header .menu-content .header-menu {
         display: inline-block;

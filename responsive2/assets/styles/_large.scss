@@ -6,7 +6,7 @@
         h2 {
             margin: 5px 0 0 0;
             font-size: $font-size-title-large;
-            float: left;
+            float: none; /* nunca juntos float ocn position:absolute*/;
             position: absolute;
         }
         .title-2 {
@@ -15,7 +15,7 @@
             margin: 5px 0 0 224px;
         }
         .logo { /* ver que conviene hacer en este caso */
-            position: absolute;
+            position: absolute; /* para posicionar uso left, top, right bottom. No margin*/
             z-index: 2;
             width: 93px; 
             margin: 5px 0 0 143px;
@@ -24,7 +24,7 @@
         .menu-content { 
             text-align: right;
             float: right;
-            width: 40%;
+            width: 40%; /* auto*/
             margin: 0;
             .header-menu {
                 display: inline-block;
