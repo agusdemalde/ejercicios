@@ -1,0 +1,92 @@
+
+<html>
+	<head>
+		<title>Formulario</title>
+		<link rel="stylesheet" type="text/css" href="./dist/css/main.css"> 
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Varela|Ramabhadra|Biryani" rel="stylesheet">
+		<script  src="./assets/scripts/main.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<h1>Bug tracker</h1>
+			<h2>Report all bugs!</h2>
+		</header>
+
+		<form name="form" class="form" action="#" method="post" onsubmit="return Validate(this)">
+			<div>
+				<label for="title" class="label">
+					<span>Bug Title</span>
+					<abbr title="required">*</abbr>
+				</label> 
+				<input class="title-input" type="text" id="title" name="title" >
+			</div><br/>
+			<div>
+				<label for="email">
+					<span>Email reporter</span>
+					<abbr title="required">*</abbr>
+				</label> 
+				<input class="email-input" type="text" id="email" name="email" >
+			</div><br/>
+			<div>
+				<label for="description">
+					<span>Issue Description</span>
+					<abbr title="required">*</abbr>
+				</label> 
+				<textarea class="description-textarea" id="description" name="description" cols="20" rows="4" ></textarea>
+			</div><br/>
+			<div>
+				<label for="osystem">
+					<span>Operating System</span>
+					<abbr title="required">*</abbr>
+				</label> 
+				<select class="select" id="osystem" name="osystem" >
+					<option disabled selected value>-Select-</option>
+					<option value="w10">W10</option>
+					<option value="macos">MacOS</option>
+					<option value="linux">Linux</option>
+				</select>
+			</div><br/>
+			<div>
+				<label for="browser">
+					<span>Browser</span>
+					<abbr title="required">*</abbr>
+				</label> 
+				<ul class="options" id="browser">
+					<li><input type="radio" name="browser" value="explorer" /><span>Internet Explorer</span></li>
+					<li><input type="radio" name="browser" value="chrome" /><span>Chrome</span></li>
+					<li><input type="radio" name="browser" value="firefox" /><span>Firefox</span></li>
+					<li><input type="radio" name="browser" value="safari" /><span>Safari</span></li>
+					<li><input type="radio" name="browser" value="opera" /><span>Opera</span></li>
+					<li><input type="radio" name="browser" value="other" /><span>Other</span></li>
+					<li><input type="text" name="otherSO"></li>
+				</ul>
+			</div><br/>
+			<div>
+				<label for="type">
+					<span>Bug Type</span>
+				</label> 
+				<ul class="options" id="type">
+					<li><input type="checkbox" name="type" value="ui" /><span>UI</span></li>
+					<li><input type="checkbox" name="type" value="security" /><span>Security</span></li>
+					<li><input type="checkbox" name="type" value="ux" /><span>UX</span></li>
+					<li><input type="checkbox" name="type" value="accesibility" /><span>Accesibility</span></li>
+				</ul>
+			</div><br/>
+			<div>
+				<label for="priority">
+					<span>Priority</span>
+					<abbr title="required">*</abbr>
+				</label> 
+				<select class="select" id="priority">
+					<option disabled selected value>-Select-</option>
+					<option value="high">High</option>
+					<option value="medium">Medium</option>
+					<option value="low">Low</option>
+				</select>
+			</div><br/>
+			<div class="button-content">
+			<input class="submit" type="submit" name="submit" value="Submit" />
+			</div>
+		</form>
+	</body>
+</html>

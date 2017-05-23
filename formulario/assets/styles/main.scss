@@ -1,0 +1,68 @@
+	@import "variables";
+	@import "base";
+
+	.header {
+		background: $base-color;
+		padding: 15px;
+
+		h1 {
+			font-size: $font-size-title;
+			color: $white;
+			margin: 0; /* mejorar codigo repetido*/
+		}
+
+		h2 {
+			font-size: $font-size-subtitle;
+			color: $white;
+			margin: 0;
+		}
+	}
+	.form {
+		padding: 20px;
+
+		div {
+
+			.title-input {
+				width: 350px;
+				height: 30px;
+			}
+
+			.email-input {
+				width: 250px;
+				height: 30px;
+			}
+
+			.description-textarea {
+				width: 350px;
+			}
+
+			.select {
+				width: 250px;
+				height: 30px;
+			}
+			.options {
+				display: inline-table;
+				padding: 0px;
+
+				li {
+					list-style: none;
+					margin-bottom: 10px;
+
+					input[type="text"] {
+						height: 30px;
+		    		}
+	    		}
+			}
+		
+		}
+		.button-content {
+			text-align: center;
+			
+			.submit {
+				background-color: $base-color;
+				color: $white;
+			
+			}
+		}
+
+	}

@@ -1,0 +1,51 @@
+body {
+  font-family: "Varela", sans-serif; }
+
+div {
+  overflow: hidden;
+  padding: 10px; }
+  div label {
+    display: inline-block;
+    width: 300px; }
+    div label abbr {
+      color: red; }
+
+.header {
+  background: #F78181;
+  padding: 15px; }
+  .header h1 {
+    font-size: 40px;
+    color: #fff;
+    margin: 0;
+    /* mejorar codigo repetido*/ }
+  .header h2 {
+    font-size: 15px;
+    color: #fff;
+    margin: 0; }
+
+.form {
+  padding: 20px; }
+  .form div .title-input {
+    width: 350px;
+    height: 30px; }
+  .form div .email-input {
+    width: 250px;
+    height: 30px; }
+  .form div .description-textarea {
+    width: 350px; }
+  .form div .select {
+    width: 250px;
+    height: 30px; }
+  .form div .options {
+    display: inline-table;
+    padding: 0px; }
+    .form div .options li {
+      list-style: none;
+      margin-bottom: 10px; }
+      .form div .options li input[type="text"] {
+        height: 30px; }
+  .form .button-content {
+    text-align: center; }
+    .form .button-content .submit {
+      background-color: #F78181;
+      color: #fff; }
