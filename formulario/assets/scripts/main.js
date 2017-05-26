@@ -54,6 +54,7 @@ var otherInput = document.getElementsByName("otherSO");
 
 	if(!seleccionado) {
 		message.innerHTML= 'Debes seleccionar una opcion';
+		rbuttons[0].focus();
 		return false;
 	}
 	
