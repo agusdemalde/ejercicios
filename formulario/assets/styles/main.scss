@@ -4,16 +4,15 @@
 	.header {
 		background: $base-color;
 		padding: 15px;
+		color: $white;
 
 		h1 {
 			font-size: $font-size-title;
-			color: $white;
-			margin: 0; /* mejorar codigo repetido*/
+			margin: 0; 
 		}
 
 		h2 {
 			font-size: $font-size-subtitle;
-			color: $white;
 			margin: 0;
 		}
 	}
@@ -34,6 +33,7 @@
 
 			.description-textarea {
 				width: 350px;
+				vertical-align: middle;
 			}
 
 			.select {
@@ -50,19 +50,24 @@
 
 					input[type="text"] {
 						height: 30px;
-		    		}
-	    		}
+					}
+				}
 			}
 		
 		}
 		.button-content {
 			text-align: center;
-			
+
 			.submit {
 				background-color: $base-color;
 				color: $white;
-			
+				padding: 5px 10px;
+				font-size: $font-size-base;
+				border: none;
+			}
+
+			.msg {
+				color: $required-color;
 			}
 		}
-
 	}

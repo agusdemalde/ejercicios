@@ -6,21 +6,20 @@ div {
   padding: 10px; }
   div label {
     display: inline-block;
-    width: 300px; }
+    width: 300px;
+    font-size: 17px; }
     div label abbr {
-      color: red; }
+      color: #F00; }
 
 .header {
   background: #F78181;
-  padding: 15px; }
+  padding: 15px;
+  color: #fff; }
   .header h1 {
     font-size: 40px;
-    color: #fff;
-    margin: 0;
-    /* mejorar codigo repetido*/ }
+    margin: 0; }
   .header h2 {
     font-size: 15px;
-    color: #fff;
     margin: 0; }
 
 .form {
@@ -32,7 +31,8 @@ div {
     width: 250px;
     height: 30px; }
   .form div .description-textarea {
-    width: 350px; }
+    width: 350px;
+    vertical-align: middle; }
   .form div .select {
     width: 250px;
     height: 30px; }
@@ -48,4 +48,9 @@ div {
     text-align: center; }
     .form .button-content .submit {
       background-color: #F78181;
-      color: #fff; }
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 17px;
+      border: none; }
+    .form .button-content .msg {
+      color: #F00; }
