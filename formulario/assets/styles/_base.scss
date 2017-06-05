@@ -11,7 +11,7 @@ div {
 		width: 300px;
 		font-size: $font-size-base;
 
-		abbr {
+		.required {
 			color: $required-color;
 		}
 	}

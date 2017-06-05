@@ -1,67 +1,94 @@
+form = document.querySelector('form');
+var parentContent = document.getElementById('submit-content');
+var label = document.createElement("label");
+parentContent.appendChild(label);
+label.classList.add("msg");
 
-function Validate(form) {
+form.addEventListener('submit', function (event) {
 
-var title = document.form.title.value;
-var email = document.form.email.value;
-var description = document.form.description.value;
-var allSelects = document.getElementsByTagName("select");
-var rbuttons = document.getElementsByName("browser");
-var seleccionado = false;
-var message=document.getElementById("msg");
-var allInputs=document.form.getElementsByTagName("input");
-var otherInput = document.getElementsByName("otherSO");
+	event.preventDefault();
 
+	if ( ValidateAll()) {
 
-	for(var i=0;i<allInputs.length;i++)
-	{
-		if(allInputs[i].name !="submit" && allInputs[i].name !="otherSO")  
-		{
-			if(allInputs[i].value=="")
-			{
-				allInputs[i].style.border="2px solid #F00"; 
-				message.innerHTML= 'Debes completar todos los campos';
-				allInputs[i].onclick=function(){ this.style.border="2px solid #CCC"; }
-				return false;
-			} 
-		}
+		HTMLFormElement.prototype.submit.call(form);
+		alert("Formulario enviado exitosamente");  
+	}
+});
+
+function ValidateAll() {
+
+	var title = document.getElementById("title");
+	var email = document.getElementById("email");
+	var description = document.getElementById("description");
+
+	if( !ValidateInput(title)) {
+		return false;
 	}
 
-	if (description == "") {
-		message.innerHTML= 'Debes completar todos los campos';
-		form.description.style.border="2px solid #F00"; 
-		form.description.onclick=function(){ this.style.border="2px solid #CCC"; }
+	if( !ValidateInput(email)) {
 		return false;
-	} 
+	}
 
-	for(var i=0;i<allSelects.length;i++)
-	{
-		if(allSelects[i].value == null || allSelects[i].value == 0 )
-			{
-				allSelects[i].style.border="2px solid #F00"; 
-				message.innerHTML= 'Debes seleccionar una opcion';
-				allSelects[i].onclick=function(){ this.style.border="2px solid #CCC"; }
+	if( !ValidateInput(description)) {
+		return false;
+	}
+
+	if( !ValidateSelect()) {
+		return false;
+	}
+
+	if( !ValidateOption()) {
+		return false;
+	}
+
+	return true;
+}
+	
+function ValidateInput (inputType) {
+
+	if ( inputType.value == "") {
+
+		inputType.classList.add("input-validate");
+		label.innerHTML = 'Debes completar todos los campos';
+		inputType.onfocus = function(){ this.classList.remove('input-validate'); }
+		return false;
+	}
+	return true;
+}
+
+function ValidateSelect () {
+
+	var allElements = document.getElementsByTagName("select");
+
+		for(var i = 0 ; i < allElements.length ; i++) {
+
+			if( allElements[i].value == null || allElements[i].value == 0 ) {
+
+				allElements[i].classList.add("input-validate");
+				label.innerHTML = 'Debes seleccionar una opcion';
+				allElements[i].onfocus = function(){ this.classList.remove('input-validate'); }
 				return false;
 			}				
-	}
-	
-	for(var i=0; i<rbuttons.length; i++) {    
-		if(rbuttons[i].checked) 
-		{
+		}
+		return true;
+}
+
+function ValidateOption () {
+
+	var rbuttons = document.getElementsByName("browser");	
+	var seleccionado = false;
+
+	for(var i = 0 ; i < rbuttons.length ; i++) {    
+				
+		if( rbuttons[i].checked) {
 			seleccionado = true;
 			break;
 		}
 	}
-
-	if(!seleccionado) {
-		message.innerHTML= 'Debes seleccionar una opcion';
-		rbuttons[0].focus();
-		return false;
-	}
-	
-	
-	message.innerHTML= "";
-	alert('Formulario enviado existosamente');
-	return true;
+		if( !seleccionado) {
+			label.innerHTML = 'Debes seleccionar una opcion';
+			rbuttons[0].focus();
+		}
+	return seleccionado;
 }
-
 

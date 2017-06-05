@@ -8,7 +8,7 @@ div {
     display: inline-block;
     width: 300px;
     font-size: 17px; }
-    div label abbr {
+    div label .required {
       color: #F00; }
 
 .header {
@@ -24,26 +24,30 @@ div {
 
 .form {
   padding: 20px; }
-  .form div .title-input {
-    width: 350px;
-    height: 30px; }
-  .form div .email-input {
-    width: 250px;
-    height: 30px; }
-  .form div .description-textarea {
-    width: 350px;
-    vertical-align: middle; }
-  .form div .select {
-    width: 250px;
-    height: 30px; }
-  .form div .options {
-    display: inline-table;
-    padding: 0px; }
-    .form div .options li {
-      list-style: none;
-      margin-bottom: 10px; }
-      .form div .options li input[type="text"] {
-        height: 30px; }
+  .form fieldset {
+    border: 0; }
+    .form fieldset .title-input {
+      width: 350px;
+      height: 30px; }
+    .form fieldset .email-input {
+      width: 250px;
+      height: 30px; }
+    .form fieldset .description-textarea {
+      width: 350px;
+      vertical-align: middle; }
+    .form fieldset .select {
+      width: 250px;
+      height: 30px; }
+    .form fieldset .options {
+      display: inline-table;
+      padding: 0px; }
+    .form fieldset .browser-label, .form fieldset .type-label {
+      vertical-align: top; }
+    .form fieldset .radio-group, .form fieldset .checkbox-group {
+      display: inline-block; }
+      .form fieldset .radio-group label, .form fieldset .checkbox-group label {
+        display: block;
+        padding: 10px 0px; }
   .form .button-content {
     text-align: center; }
     .form .button-content .submit {
@@ -52,5 +56,9 @@ div {
       padding: 5px 10px;
       font-size: 17px;
       border: none; }
-    .form .button-content .msg {
-      color: #F00; }
+
+.input-validate {
+  border: 2px solid #F00; }
+
+.msg {
+  color: #F00; }

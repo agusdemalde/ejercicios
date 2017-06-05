@@ -1,5 +1,5 @@
-	@import "variables";
-	@import "base";
+@import "variables";
+@import "base";
 
 	.header {
 		background: $base-color;
@@ -16,12 +16,13 @@
 			margin: 0;
 		}
 	}
-	
+
 	.form {
 		padding: 20px;
 
-		div {
-
+		fieldset {
+				border: 0;
+			
 			.title-input {
 				width: 350px;
 				height: 30px;
@@ -41,19 +42,25 @@
 				width: 250px;
 				height: 30px;
 			}
+
 			.options {
 				display: inline-table;
 				padding: 0px;
+			}
 
-				li {
-					list-style: none;
-					margin-bottom: 10px;
+			.browser-label, .type-label {
+				vertical-align: top;
+			}
 
-					input[type="text"] {
-						height: 30px;
-					}
+			.radio-group, .checkbox-group {
+				display: inline-block;
+						
+				label {
+					display: block;
+					padding: 10px 0px;
 				}
 			}
+
 		}
 
 		.button-content {
@@ -66,9 +73,12 @@
 				font-size: $font-size-base;
 				border: none;
 			}
-
-			.msg {
-				color: $required-color;
-			}
 		}
+	}
+
+	.input-validate {
+		border: $border-required;
+	}
+	.msg {
+		color: $required-color;
 	}
