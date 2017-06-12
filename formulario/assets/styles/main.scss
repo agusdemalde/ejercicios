@@ -66,13 +66,30 @@
 		.button-content {
 			text-align: center;
 
-			.submit {
-				background-color: $base-color;
-				color: $white;
-				padding: 5px 10px;
-				font-size: $font-size-base;
-				border: none;
-			}
+			
+		}
+	}
+	.bug-table {
+		margin: auto;
+		width: 85%;
+		border-collapse: collapse;
+		border: 1px solid #fff; 
+		border-style: hidden;
+		text-align: center;
+
+		th {
+			padding: 8px;
+			background-color: $white;
+			width: 14%;
+			color: $table-color;
+			font-size: 15px;
+		}
+
+		td {
+			padding: 3px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #f78181 #ccc;
 		}
 	}
 
@@ -82,3 +99,13 @@
 	.msg {
 		color: $required-color;
 	}
+	.high-bug {
+		background: #ecc1c1;
+	}
+	.medium-bug {
+		background: #c3dec4;
+	}
+	.low-bug {
+		background: #eaf1ad;
+	}
+	

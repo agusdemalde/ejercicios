@@ -16,3 +16,11 @@ div {
 		}
 	}
 }
+
+.btn {
+	background-color: $base-color;
+	color: $white;
+	padding: 5px 10px;
+	font-size: $font-size-base;
+	border: none;
+}

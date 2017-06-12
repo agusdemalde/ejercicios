@@ -58,15 +58,34 @@
 					<label class="priority"> Priority <span class="required">*</span></label> 
 					<select class="select" id="priority">
 						<option disabled selected value> -Select- </option>
-						<option value="high"> High </option>
-						<option value="medium"> Medium </option>
+						<option value="High"> High </option>
+						<option value="Medium"> Medium </option>
 						<option value="Low"> Low </option>
 					</select>
 				</fieldset>
 				<div class="button-content" id="submit-content">
-					<input class="submit" type="submit" name="submit" id="submit" value="Submit" />
+					<input class="btn" type="submit" name="submit" id="submit" value="Add Bug" />
+					<input type="button" class="btn" name="remove-btn" id="remove-btn" value="Remove Bug"></button>
 				</div>
 			</form>
+			<div class="table-content">
+				<table id="bug-table" class="bug-table">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Email</th>
+							<th>Description</th>
+							<th>Op. System</th>
+							<th>Browser</th>
+							<th>Type</th>
+							<th>Priority</th>
+							<th>Select</th>
+						</tr>
+					</thead>
+					<tbody> 
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<script type="text/javascript" src="./assets/scripts/main.js"></script>
 	</body>

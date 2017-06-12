@@ -11,6 +11,13 @@ div {
     div label .required {
       color: #F00; }
 
+.btn {
+  background-color: #F78181;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 17px;
+  border: none; }
+
 .header {
   background: #F78181;
   padding: 15px;
@@ -50,15 +57,37 @@ div {
         padding: 10px 0px; }
   .form .button-content {
     text-align: center; }
-    .form .button-content .submit {
-      background-color: #F78181;
-      color: #fff;
-      padding: 5px 10px;
-      font-size: 17px;
-      border: none; }
+
+.bug-table {
+  margin: auto;
+  width: 85%;
+  border-collapse: collapse;
+  border: 1px solid #fff;
+  border-style: hidden;
+  text-align: center; }
+  .bug-table th {
+    padding: 8px;
+    background-color: #fff;
+    width: 14%;
+    color: #d83d3d;
+    font-size: 15px; }
+  .bug-table td {
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f78181 #ccc; }
 
 .input-validate {
   border: 2px solid #F00; }
 
 .msg {
   color: #F00; }
+
+.high-bug {
+  background: #ecc1c1; }
+
+.medium-bug {
+  background: #c3dec4; }
+
+.low-bug {
+  background: #eaf1ad; }
