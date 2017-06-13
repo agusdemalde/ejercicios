@@ -27,7 +27,7 @@
 				<fieldset>
 					<label for="osystem"> Operating System <span class="required">*</span></label> 
 					<select class="select" id="osystem" name="osystem" >
-						<option disabled selected value> -Select- </option>
+						<option disabled selected value=-1> -Select- </option>
 						<option value="w10"> W10 </option>
 						<option value="macos"> MacOS </option>
 						<option value="linux"> Linux </option>
@@ -57,10 +57,10 @@
 				<fieldset>
 					<label class="priority"> Priority <span class="required">*</span></label> 
 					<select class="select" id="priority">
-						<option disabled selected value> -Select- </option>
-						<option value="High"> High </option>
-						<option value="Medium"> Medium </option>
-						<option value="Low"> Low </option>
+						<option disabled selected value=-1> -Select- </option>
+						<option value=0> High </option>
+						<option value=1> Medium </option>
+						<option value=2> Low </option>
 					</select>
 				</fieldset>
 				<div class="button-content" id="submit-content">
@@ -78,7 +78,7 @@
 							<th>Op. System</th>
 							<th>Browser</th>
 							<th>Type</th>
-							<th>Priority</th>
+							<th id="th-priority">Priority</th>
 							<th>Select</th>
 						</tr>
 					</thead>

@@ -4,6 +4,7 @@ var label = document.createElement("label");
 parentContent.appendChild(label);
 label.classList.add("msg");
 var btnRemove = document.getElementById("remove-btn");
+var objArray = [];
 
 btnRemove.addEventListener('click', function () {
 var chbox = document.getElementsByName("chboxRemove");
@@ -13,7 +14,7 @@ var chbox = document.getElementsByName("chboxRemove");
 	}
 
 });
-
+	
 form.addEventListener('submit', function (event) {
 
 	event.preventDefault();
@@ -21,19 +22,37 @@ form.addEventListener('submit', function (event) {
 	if ( ValidateAll()) {
 
 	var BugObject = {};
-     
-    BugObject ['title'] = form.title.value, 
-    BugObject ['email'] =  form.email.value,
-    BugObject ['description'] =  form.description.value,
-    BugObject ['system'] = form.osystem.value,
-    BugObject ['browser'] =  form.browser.value,
-    BugObject ['type'] = getCheckboxValues(),
-    BugObject ['priority'] =  form.priority.value
+	
+	BugObject ['title'] = form.title.value, 
+	BugObject ['email'] =  form.email.value,
+	BugObject ['description'] =  form.description.value,
+	BugObject ['system'] = form.osystem.value,
+	BugObject ['browser'] =  form.browser.value,
+	BugObject ['type'] = getCheckboxValues(),
+	BugObject ['priority'] =  form.priority.value
+
+	objArray.push(BugObject);
+
+	function compare(a,b) {
+		console.log(a.priority, b.priority);
+		  if (a.priority < b.priority)
+		     return -1;
+		  if (a.priority > b.priority)
+		    return 1;
+		  return 0;
+		}
+
+	objArray.sort(compare);
+	console.log(objArray);
+	console.log(BugObject);
+	console.log(objArray.title);
+	console.log(BugObject.title);
+
   
-    addBug(BugObject);
-   
-    ResetForm();
-    
+	addBug(BugObject);
+	sortByPriority(form.priority.value);
+	ResetForm();
+
 	}
 });
 
@@ -84,7 +103,7 @@ function ValidateSelect () {
 
 		for(var i = 0 ; i < allElements.length ; i++) {
 
-			if( allElements[i].value == null || allElements[i].value == 0 ) {
+			if( allElements[i].value == null || allElements[i].value == -1) {
 
 				allElements[i].classList.add("input-validate");
 				label.innerHTML = 'Debes seleccionar una opcion';
@@ -113,22 +132,39 @@ function ValidateOption () {
 		}
 	return seleccionado;
 }
+function getPriorityValue (value) {
+	var priority = "";
+
+		if(value == 0) {
+			priority = "High";
+		}
+		else {
+			if (value == 1) {
+				priority = "Medium";
+			}
+			else {
+				priority = "Low";
+			}
+		}			
+			
+	return priority;
+	
+}
 
 function getCheckboxValues() {
 
 	var chboxArray = [];
 
-  var chboxElements = document.getElementsByName("type");
+	var chboxElements = document.getElementsByName("type");
 
-  for(var i = 0; i < chboxElements.length; i++) {
+	for(var i = 0; i < chboxElements.length; i++) {
 
-    if(chboxElements[i].checked) { 
-    	chboxArray.push(chboxElements[i].value);
-    	
-    }
-}
+		if(chboxElements[i].checked) { 
+			chboxArray.push(chboxElements[i].value);
+		}
+	}
 
-  return chboxArray;
+	return chboxArray;
 } 
 
 function CreateCheckbox() {
@@ -143,18 +179,24 @@ function CreateCheckbox() {
 
 function addBug(obj) {
 		
-		var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
-		var newText  = document.createTextNode(title);
-		var row = "";
-		var checkbox = CreateCheckbox();
+	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
+	var newText  = document.createTextNode(title);
+	
+	var checkbox = CreateCheckbox();
 
-		row += "<tr id='tr'><td>" + obj.title + "</td><td>" + obj.email + "</td><td>" + obj.description + 
-		"</td><td>" + obj.system + "</td><td>" + obj.browser + "</td><td>" +  obj.type + "</td><td>" + 
-		obj.priority + "</td><td>" +  "</td></tr>";
+	function addrow (a) {
+		var row = "";
+		row += "<tr id='tr'><td>" + a.title + "</td><td>" + a.email + "</td><td>" + a.description + 
+		"</td><td>" + a.system + "</td><td>" + a.browser + "</td><td>" +  a.type + "</td><td>" + 
+		getPriorityValue(a.priority) + "</td><td>" +  "</td></tr>";
 
 		table.innerHTML +=  row;
+	}
+
+
 	
-		var rowLength = table.rows.length;
+	
+	var rowLength = table.rows.length;
 
 		for ( i = 0; i < rowLength; i++) {
 
@@ -163,8 +205,7 @@ function addBug(obj) {
 			}
 		}
 
-		StylePriority(obj.priority);
-		
+	StylePriority(obj.priority);
 
 }   
 
@@ -178,7 +219,6 @@ function StylePriority (priority) {
 	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
 	var rowLength = table.rows.length;
 
-	console.log(rowLength);
 			
 		for ( i = 0; i < rowLength; i++) {
 			
@@ -214,4 +254,27 @@ function DeleteRow () {
 		}
 	return seleccionado;
 }
+function sortByPriority () {
+	/*var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
+	var rowLength = table.rows.length;
+	var sortArray = [];
+	console.log('entro al metodo');
+		
+		for ( i = 0; i < rowLength; i++) {
+			objs.sort(function() {
+				return (table.rows[i].cells[6] > table.rows[i+1].cells[6]) ? 1 : (((table.rows[i].cells[6] < table.rows[i+1].cells[6]) ? -1 : 0);} ); 
 
+			sortArray.push(table.rows[i].cells[6]);
+			console.log(table.rows[i].cells[6]);
+				if (table.rows[i].cells[6] < table.rows[i+1].cells[6]) 
+					return -1;
+				if (table.rows[i].cells[6] > table.rows[i+1].cells[6])
+					return 1;
+				return 0;
+		}
+
+		console.log(sortArray);
+	
+	return sortArray;*/
+
+}
