@@ -181,21 +181,14 @@ function addBug(obj) {
 		
 	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
 	var newText  = document.createTextNode(title);
-	
+	var row = "";
 	var checkbox = CreateCheckbox();
 
-	function addrow (a) {
-		var row = "";
-		row += "<tr id='tr'><td>" + a.title + "</td><td>" + a.email + "</td><td>" + a.description + 
-		"</td><td>" + a.system + "</td><td>" + a.browser + "</td><td>" +  a.type + "</td><td>" + 
-		getPriorityValue(a.priority) + "</td><td>" +  "</td></tr>";
-
-		table.innerHTML +=  row;
-	}
-
-
+	row += "<tr id='tr'><td>" + obj.title + "</td><td>" + obj.email + "</td><td>" + obj.description + 
+	"</td><td>" + obj.system + "</td><td>" + obj.browser + "</td><td>" +  obj.type + "</td><td>" + 
+	getPriorityValue(obj.priority) + "</td><td>" +  "</td></tr>";
 	
-	
+	table.innerHTML +=  row;
 	var rowLength = table.rows.length;
 
 		for ( i = 0; i < rowLength; i++) {
