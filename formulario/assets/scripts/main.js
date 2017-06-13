@@ -45,12 +45,9 @@ form.addEventListener('submit', function (event) {
 	objArray.sort(compare);
 	console.log(objArray);
 	console.log(BugObject);
-	console.log(objArray.title);
-	console.log(BugObject.title);
-
   
 	addBug(BugObject);
-	sortByPriority(form.priority.value);
+
 	ResetForm();
 
 	}
@@ -177,6 +174,19 @@ function CreateCheckbox() {
 
 }
 
+function addSortedRow(obj) {
+	var row = "";
+	console.log(obj[0]);
+	console.log(obj[0].title)
+	for ( i = 0; i < obj.length; i++) {
+
+		row += "<tr id='tr'><td>" + obj[i].title + "</td><td>" + obj[i].email + "</td><td>" + obj[obj.length-1].description + 
+		"</td><td>" + obj[obj.length-1].system + "</td><td>" + obj[obj.length-1].browser + "</td><td>" +  obj[obj.length-1].type + "</td><td>" + 
+		getPriorityValue(obj[obj.length-1].priority) + "</td><td>" +  "</td></tr>";
+	}
+return row;
+} 
+
 function addBug(obj) {
 		
 	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
@@ -184,13 +194,15 @@ function addBug(obj) {
 	var row = "";
 	var checkbox = CreateCheckbox();
 
+
 	row += "<tr id='tr'><td>" + obj.title + "</td><td>" + obj.email + "</td><td>" + obj.description + 
-	"</td><td>" + obj.system + "</td><td>" + obj.browser + "</td><td>" +  obj.type + "</td><td>" + 
-	getPriorityValue(obj.priority) + "</td><td>" +  "</td></tr>";
+		"</td><td>" + obj.system + "</td><td>" + obj.browser + "</td><td>" +  obj.type + "</td><td>" + 
+		getPriorityValue(obj.priority) + "</td><td>" +  "</td></tr>";
 	
 	table.innerHTML +=  row;
-	var rowLength = table.rows.length;
 
+	var rowLength = table.rows.length;
+	
 		for ( i = 0; i < rowLength; i++) {
 
 			if(table.rows[i].cells[table.rows[i].cells.length-1].value == null) {
@@ -246,28 +258,4 @@ function DeleteRow () {
 			}
 		}
 	return seleccionado;
-}
-function sortByPriority () {
-	/*var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
-	var rowLength = table.rows.length;
-	var sortArray = [];
-	console.log('entro al metodo');
-		
-		for ( i = 0; i < rowLength; i++) {
-			objs.sort(function() {
-				return (table.rows[i].cells[6] > table.rows[i+1].cells[6]) ? 1 : (((table.rows[i].cells[6] < table.rows[i+1].cells[6]) ? -1 : 0);} ); 
-
-			sortArray.push(table.rows[i].cells[6]);
-			console.log(table.rows[i].cells[6]);
-				if (table.rows[i].cells[6] < table.rows[i+1].cells[6]) 
-					return -1;
-				if (table.rows[i].cells[6] > table.rows[i+1].cells[6])
-					return 1;
-				return 0;
-		}
-
-		console.log(sortArray);
-	
-	return sortArray;*/
-
 }
