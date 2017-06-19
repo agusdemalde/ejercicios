@@ -60,52 +60,77 @@
 					padding: 10px 0px;
 				}
 			}
-
 		}
 
 		.button-content {
 			text-align: center;
-
-			
+		
 		}
 	}
-	.bug-table {
-		margin: auto;
-		width: 85%;
-		border-collapse: collapse;
-		border: 1px solid #fff; 
-		border-style: hidden;
+	.cards-content {
 		text-align: center;
+		padding: 10px;
 
-		th {
-			padding: 8px;
-			background-color: $white;
-			width: 14%;
-			color: $table-color;
-			font-size: 15px;
+		.bug-div {
+			width: 70%;
+    		margin: 0px auto;
+			border: $border-div;
+			
+			.bug-button {
+				float: right;
+				border: none;
+			    padding: 7px;
+				color: $bug-button-color;
+				font-weight: 500;
+				background: $white;
+			}
+			.bug-priority {
+				float: left;
+				width: auto;
+			    font-size: $font-size-priority;
+			}
+
+			.bug-title {
+				font-size: $font-size-bug-title;
+				width: 100%;
+			}
+
+			.bug-content {
+				font-size: $font-size-subtitle;
+				line-height: 1.50;
+			}
+
 		}
+		.bug-div-0 {
+			background: $bug-div-high;
 
-		td {
-			padding: 3px;
-			border-width: 1px;
-			border-style: solid;
-			border-color: #f78181 #ccc;
+			.bug-priority-0 {
+				color: $bug-priority-high;
+			}
+		}
+		.bug-div-1 {
+			background: $bug-div-medium;
+
+			.bug-priority-1 {
+				color: $bug-priority-medium;
+			}
+
+		}
+		.bug-div-2 {
+			background: $bug-div-low;
+
+			.bug-priority-2 {
+				color: $bug-priority-low;
+			}
 		}
 	}
-
 	.input-validate {
 		border: $border-required;
 	}
 	.msg {
 		color: $required-color;
 	}
-	.high-bug {
-		background: #ecc1c1;
-	}
-	.medium-bug {
-		background: #c3dec4;
-	}
-	.low-bug {
-		background: #eaf1ad;
-	}
+
+
+	
 	

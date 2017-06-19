@@ -1,14 +1,14 @@
 body {
-  font-family: "Varela", sans-serif; }
+  font-family: sans-serif; }
 
 div {
   overflow: hidden;
   padding: 10px; }
-  div label {
+  div .form label {
     display: inline-block;
     width: 300px;
     font-size: 17px; }
-    div label .required {
+    div .form label .required {
       color: #F00; }
 
 .btn {
@@ -58,36 +58,45 @@ div {
   .form .button-content {
     text-align: center; }
 
-.bug-table {
-  margin: auto;
-  width: 85%;
-  border-collapse: collapse;
-  border: 1px solid #fff;
-  border-style: hidden;
-  text-align: center; }
-  .bug-table th {
-    padding: 8px;
-    background-color: #fff;
-    width: 14%;
-    color: #d83d3d;
-    font-size: 15px; }
-  .bug-table td {
-    padding: 3px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #f78181 #ccc; }
+.cards-content {
+  text-align: center;
+  padding: 10px; }
+  .cards-content .bug-div {
+    width: 70%;
+    margin: 0px auto;
+    border: 1px solid #eee; }
+    .cards-content .bug-div .bug-button {
+      float: right;
+      border: none;
+      padding: 7px;
+      color: #807d7d;
+      font-weight: 500;
+      background: #fff; }
+    .cards-content .bug-div .bug-priority {
+      float: left;
+      width: auto;
+      font-size: 13px; }
+    .cards-content .bug-div .bug-title {
+      font-size: 25px;
+      width: 100%; }
+    .cards-content .bug-div .bug-content {
+      font-size: 15px;
+      line-height: 1.50; }
+  .cards-content .bug-div-0 {
+    background: #f3cbcb; }
+    .cards-content .bug-div-0 .bug-priority-0 {
+      color: #9e0d0d; }
+  .cards-content .bug-div-1 {
+    background: #c9e2cb; }
+    .cards-content .bug-div-1 .bug-priority-1 {
+      color: #0b6f0b; }
+  .cards-content .bug-div-2 {
+    background: #f0f5c5; }
+    .cards-content .bug-div-2 .bug-priority-2 {
+      color: #92920a; }
 
 .input-validate {
   border: 2px solid #F00; }
 
 .msg {
   color: #F00; }
-
-.high-bug {
-  background: #ecc1c1; }
-
-.medium-bug {
-  background: #c3dec4; }
-
-.low-bug {
-  background: #eaf1ad; }

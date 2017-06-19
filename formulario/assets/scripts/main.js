@@ -1,19 +1,8 @@
 var form = document.querySelector('form');
 var parentContent = document.getElementById('submit-content');
 var label = document.createElement("label");
-parentContent.appendChild(label);
 label.classList.add("msg");
-var btnRemove = document.getElementById("remove-btn");
 var objArray = [];
-
-btnRemove.addEventListener('click', function () {
-var chbox = document.getElementsByName("chboxRemove");
-	if(!DeleteRow()) {
-		alert("Debes seleccionar un bug");
-		chbox[0].focus();
-	}
-
-});
 	
 form.addEventListener('submit', function (event) {
 
@@ -21,37 +10,37 @@ form.addEventListener('submit', function (event) {
 
 	if ( ValidateAll()) {
 
-	var BugObject = {};
-	
-	BugObject ['title'] = form.title.value, 
-	BugObject ['email'] =  form.email.value,
-	BugObject ['description'] =  form.description.value,
-	BugObject ['system'] = form.osystem.value,
-	BugObject ['browser'] =  form.browser.value,
-	BugObject ['type'] = getCheckboxValues(),
-	BugObject ['priority'] =  form.priority.value
+		label.innerHTML= "";
+		var BugObject = {}; 
 
-	objArray.push(BugObject);
+		BugObject ['title'] = form.title.value, 
+		BugObject ['email'] =  form.email.value,
+		BugObject ['description'] =  form.description.value,
+		BugObject ['system'] = form.osystem.value,
+		BugObject ['browser'] =  form.browser.value,
+		BugObject ['type'] = getCheckboxValues(),
+		BugObject ['priority'] =  form.priority.value 
+
+		SortArray(BugObject);
+		addCard(objArray);
+		ResetForm();
+	}
+});
+
+function SortArray(obj) {
+
+	objArray.push(obj);
 
 	function compare(a,b) {
 		console.log(a.priority, b.priority);
-		  if (a.priority < b.priority)
-		     return -1;
-		  if (a.priority > b.priority)
-		    return 1;
-		  return 0;
-		}
-
-	objArray.sort(compare);
-	console.log(objArray);
-	console.log(BugObject);
-  
-	addBug(BugObject);
-
-	ResetForm();
-
+			if (a.priority < b.priority)
+				return -1;
+			if (a.priority > b.priority)
+				return 1;
+			return 0;
 	}
-});
+	objArray.sort(compare);
+}
 
 function ValidateAll() {
 
@@ -60,22 +49,27 @@ function ValidateAll() {
 	var description = document.getElementById("description");
 
 	if( !ValidateInput(title)) {
+		parentContent.appendChild(label);
 		return false;
 	}
 
 	if( !ValidateInput(email)) {
+		parentContent.appendChild(label);
 		return false;
 	}
 
 	if( !ValidateInput(description)) {
+		parentContent.appendChild(label);
 		return false;
 	}
 
 	if( !ValidateSelect()) {
+		parentContent.appendChild(label);
 		return false;
 	}
 
 	if( !ValidateOption()) {
+		parentContent.appendChild(label);
 		return false;
 	}
 
@@ -123,12 +117,13 @@ function ValidateOption () {
 			break;
 		}
 	}
-		if( !seleccionado) {
-			label.innerHTML = 'Debes seleccionar una opcion';
-			rbuttons[0].focus();
-		}
+	if( !seleccionado) {
+		label.innerHTML = 'Debes seleccionar una opcion';
+		rbuttons[0].focus();
+	}
 	return seleccionado;
 }
+
 function getPriorityValue (value) {
 	var priority = "";
 
@@ -143,15 +138,12 @@ function getPriorityValue (value) {
 				priority = "Low";
 			}
 		}			
-			
 	return priority;
-	
 }
 
 function getCheckboxValues() {
 
 	var chboxArray = [];
-
 	var chboxElements = document.getElementsByName("type");
 
 	for(var i = 0; i < chboxElements.length; i++) {
@@ -160,102 +152,63 @@ function getCheckboxValues() {
 			chboxArray.push(chboxElements[i].value);
 		}
 	}
-
 	return chboxArray;
 } 
 
-function CreateCheckbox() {
-	
-	var checkbox = document.createElement('input');
-	checkbox.type = "checkbox";
-	checkbox.name= "chboxRemove";
 
-	return checkbox;
-
+function appendBugTitle (obj, div) {
+	var titleLabel = document.createElement('label');
+	div.appendChild(titleLabel);
+	titleLabel.classList.add('bug-title');
+	titleLabel.innerHTML = obj.title;
 }
 
-function addSortedRow(obj) {
-	var row = "";
-	console.log(obj[0]);
-	console.log(obj[0].title)
-	for ( i = 0; i < obj.length; i++) {
+function appendBugContent (obj, div) {
+	var primaryInfo = document.createElement('p');
+	div.appendChild(primaryInfo);
+	primaryInfo.classList.add('bug-content');
+	primaryInfo.innerHTML = " <b> Email: </b>" + obj.email  + "<b> &nbsp; Description: </b> " + obj.description + " </br>" +
+							" <b> Op. System: </b> " + obj.system + "<b> &nbsp; Browser: </b>" + obj.browser + "<b> &nbsp; Type: </b>" + obj.type;
 
-		row += "<tr id='tr'><td>" + obj[i].title + "</td><td>" + obj[i].email + "</td><td>" + obj[obj.length-1].description + 
-		"</td><td>" + obj[obj.length-1].system + "</td><td>" + obj[obj.length-1].browser + "</td><td>" +  obj[obj.length-1].type + "</td><td>" + 
-		getPriorityValue(obj[obj.length-1].priority) + "</td><td>" +  "</td></tr>";
+}
+function appendButtonAndPriority (div, content, priority) {
+	var priorityLabel = document.createElement('label');
+	div.appendChild(priorityLabel);
+	priorityLabel.innerHTML = getPriorityValue(priority);
+	str = "bug-priority-" + priority;
+	priorityLabel.classList.add(str);
+	priorityLabel.classList.add("bug-priority");
+
+	var buttonRemove = document.createElement('input');
+	buttonRemove.type = 'button';
+	buttonRemove.value = 'Remove Bug';
+	buttonRemove.classList.add('bug-button');
+	div.appendChild(buttonRemove);
+	buttonRemove.onclick = function () { this.parentNode.remove(this)}
+}
+
+function addCard (obj) {
+	var content = document.getElementById('cards-content');
+		content.innerHTML = "";
+	
+	for (var i = 0; i < obj.length; i++) {
+
+		var div = document.createElement('div');
+		content.appendChild(div);
+		str = "bug-div-" + obj[i].priority;
+		div.classList.add('bug-div'); 
+		div.classList.add(str); 
+
+		appendButtonAndPriority(div, content, obj[i].priority);
+		appendBugTitle(obj[i], div);
+		appendBugContent(obj[i], div);
 	}
-return row;
-} 
-
-function addBug(obj) {
-		
-	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
-	var newText  = document.createTextNode(title);
-	var row = "";
-	var checkbox = CreateCheckbox();
-
-
-	row += "<tr id='tr'><td>" + obj.title + "</td><td>" + obj.email + "</td><td>" + obj.description + 
-		"</td><td>" + obj.system + "</td><td>" + obj.browser + "</td><td>" +  obj.type + "</td><td>" + 
-		getPriorityValue(obj.priority) + "</td><td>" +  "</td></tr>";
-	
-	table.innerHTML +=  row;
-
-	var rowLength = table.rows.length;
-	
-		for ( i = 0; i < rowLength; i++) {
-
-			if(table.rows[i].cells[table.rows[i].cells.length-1].value == null) {
-					table.rows[i].cells[table.rows[i].cells.length-1].appendChild(checkbox);
-			}
-		}
-
-	StylePriority(obj.priority);
-
-}   
+}
 
 function ResetForm() {
-
 	document.getElementById("form").reset();
 }
 
-function StylePriority (priority) {
 
-	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
-	var rowLength = table.rows.length;
 
-			
-		for ( i = 0; i < rowLength; i++) {
-			
-		   	if (table.rows[i].cells[6].innerHTML == "High") {
 
-			   		table.rows[i].className = "high-bug";
-			}
-			else {
-			   	if (table.rows[i].cells[6].innerHTML == "Medium") {
-
-		   			table.rows[i].className = "medium-bug";
-			   	}
-			   	else {
-			   			
-			   		table.rows[i].className = "low-bug";
-			   		}
-			}	 
- 		}
-}
-
-function DeleteRow () {
-
-	var table = document.getElementById('bug-table').getElementsByTagName('tbody')[0];
-	var chbox = document.getElementsByName("chboxRemove");
-	var seleccionado = false;
-
-		for ( i = 0; i < chbox.length; i++) {
-
-			if(chbox[i].checked) {
-				table.rows[i].remove(table.rows[i]);
-				seleccionado = true;
-			}
-		}
-	return seleccionado;
-}
