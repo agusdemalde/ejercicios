@@ -3,15 +3,17 @@ var parentContent = document.getElementById('submit-content');
 var label = document.createElement("label");
 label.classList.add("msg");
 var objArray = [];
-	
+var i = 0;
+
 form.addEventListener('submit', function (event) {
 
 	event.preventDefault();
 
-	if ( ValidateAll()) {
+	if ( validateAll()) {
 
 		label.innerHTML= "";
-		var BugObject = {}; 
+		var BugObject = {};
+		 
 
 		BugObject ['title'] = form.title.value, 
 		BugObject ['email'] =  form.email.value,
@@ -19,15 +21,19 @@ form.addEventListener('submit', function (event) {
 		BugObject ['system'] = form.osystem.value,
 		BugObject ['browser'] =  form.browser.value,
 		BugObject ['type'] = getCheckboxValues(),
-		BugObject ['priority'] =  form.priority.value 
+		BugObject ['priority'] =  form.priority.value,
+		BugObject ['id'] = i;
 
-		SortArray(BugObject);
+
+		sortArray(BugObject);
 		addCard(objArray);
-		ResetForm();
+		resetForm();
+		i++;
+		console.log(BugObject.id);
 	}
 });
 
-function SortArray(obj) {
+function sortArray(obj) {
 
 	objArray.push(obj);
 
@@ -42,33 +48,33 @@ function SortArray(obj) {
 	objArray.sort(compare);
 }
 
-function ValidateAll() {
+function validateAll() {
 
 	var title = document.getElementById("title");
 	var email = document.getElementById("email");
 	var description = document.getElementById("description");
 
-	if( !ValidateInput(title)) {
+	if( !validateInput(title)) {
 		parentContent.appendChild(label);
 		return false;
 	}
 
-	if( !ValidateInput(email)) {
+	if( !validateInput(email)) {
 		parentContent.appendChild(label);
 		return false;
 	}
 
-	if( !ValidateInput(description)) {
+	if( !validateInput(description)) {
 		parentContent.appendChild(label);
 		return false;
 	}
 
-	if( !ValidateSelect()) {
+	if( !validateSelect()) {
 		parentContent.appendChild(label);
 		return false;
 	}
 
-	if( !ValidateOption()) {
+	if( !validateOption()) {
 		parentContent.appendChild(label);
 		return false;
 	}
@@ -76,7 +82,7 @@ function ValidateAll() {
 	return true;
 }
 	
-function ValidateInput (inputType) {
+function validateInput (inputType) {
 
 	if ( inputType.value == "") {
 
@@ -88,7 +94,7 @@ function ValidateInput (inputType) {
 	return true;
 }
 
-function ValidateSelect () {
+function validateSelect () {
 
 	var allElements = document.getElementsByTagName("select");
 
@@ -105,7 +111,7 @@ function ValidateSelect () {
 		return true;
 }
 
-function ValidateOption () {
+function validateOption () {
 
 	var rbuttons = document.getElementsByName("browser");	
 	var seleccionado = false;
@@ -157,6 +163,7 @@ function getCheckboxValues() {
 
 
 function appendBugTitle (obj, div) {
+	
 	var titleLabel = document.createElement('label');
 	div.appendChild(titleLabel);
 	titleLabel.classList.add('bug-title');
@@ -164,27 +171,40 @@ function appendBugTitle (obj, div) {
 }
 
 function appendBugContent (obj, div) {
-	var primaryInfo = document.createElement('p');
-	div.appendChild(primaryInfo);
-	primaryInfo.classList.add('bug-content');
-	primaryInfo.innerHTML = " <b> Email: </b>" + obj.email  + "<b> &nbsp; Description: </b> " + obj.description + " </br>" +
-							" <b> Op. System: </b> " + obj.system + "<b> &nbsp; Browser: </b>" + obj.browser + "<b> &nbsp; Type: </b>" + obj.type;
+
+	var bugInfo = document.createElement('dl');
+	bugInfo.id= "bugInfo";
+	div.appendChild(bugInfo);
+	bugInfo.classList.add('bug-content');
+	var references= document.getElementById("priorityRef");
+	references.style.display = "block";
+
+	bugInfo.innerHTML = "<dt> Description: </dt> " + "<dd>" + obj.description + "</dd>" + "<dt> Email: </dt>" + "<dd>" + obj.email + "</dd>" +
+							" <dt class='inline'> Op. System: </dt> " + "<dd class='inline'>" + obj.system + "</dd>" + "<dt class='inline'> Browser: </dt>" + "<dd class='inline'>" + obj.browser + "</dd>"  ;
+
+	if( obj.type.length != 0) {
+
+		bugInfo.innerHTML += "<dt>Type: </dt>" + "<dd>" + obj.type + "</dd>" ;
+	}
 
 }
-function appendButtonAndPriority (div, content, priority) {
-	var priorityLabel = document.createElement('label');
-	div.appendChild(priorityLabel);
-	priorityLabel.innerHTML = getPriorityValue(priority);
-	str = "bug-priority-" + priority;
-	priorityLabel.classList.add(str);
-	priorityLabel.classList.add("bug-priority");
-
+function appendButtonAndPriority (div, obj, currentyObj) {
+	
 	var buttonRemove = document.createElement('input');
 	buttonRemove.type = 'button';
-	buttonRemove.value = 'Remove Bug';
+	buttonRemove.value = 'X';
 	buttonRemove.classList.add('bug-button');
 	div.appendChild(buttonRemove);
-	buttonRemove.onclick = function () { this.parentNode.remove(this)}
+	buttonRemove.onclick = function () {
+
+		this.parentNode.remove(this)
+		
+		for (var i = 0; i < obj.length; i++) {
+			if(obj[i].id == currentyObj.id) {
+				obj.splice(obj[i].id,1);
+			}
+		}
+	}
 }
 
 function addCard (obj) {
@@ -199,13 +219,14 @@ function addCard (obj) {
 		div.classList.add('bug-div'); 
 		div.classList.add(str); 
 
-		appendButtonAndPriority(div, content, obj[i].priority);
+		appendButtonAndPriority(div, obj, obj[i]);
 		appendBugTitle(obj[i], div);
 		appendBugContent(obj[i], div);
 	}
+	console.log(obj);
 }
 
-function ResetForm() {
+function resetForm() {
 	document.getElementById("form").reset();
 }
 

@@ -26,7 +26,7 @@ div {
     font-size: 40px;
     margin: 0; }
   .header h2 {
-    font-size: 15px;
+    font-size: 14px;
     margin: 0; }
 
 .form {
@@ -47,14 +47,14 @@ div {
       height: 30px; }
     .form fieldset .options {
       display: inline-table;
-      padding: 0px; }
+      padding: 0; }
     .form fieldset .browser-label, .form fieldset .type-label {
       vertical-align: top; }
     .form fieldset .radio-group, .form fieldset .checkbox-group {
       display: inline-block; }
       .form fieldset .radio-group label, .form fieldset .checkbox-group label {
         display: block;
-        padding: 10px 0px; }
+        padding: 10px 0; }
   .form .button-content {
     text-align: center; }
 
@@ -62,38 +62,61 @@ div {
   text-align: center;
   padding: 10px; }
   .cards-content .bug-div {
-    width: 70%;
-    margin: 0px auto;
-    border: 1px solid #eee; }
+    width: 55%;
+    margin: 0 auto;
+    border-bottom: 3px solid #eee;
+    margin-top: 5px; }
     .cards-content .bug-div .bug-button {
       float: right;
       border: none;
-      padding: 7px;
-      color: #807d7d;
-      font-weight: 500;
-      background: #fff; }
+      font-size: 15px;
+      color: #f78181;
+      font-weight: 600;
+      background: #fff;
+      padding: 0;
+      cursor: pointer; }
     .cards-content .bug-div .bug-priority {
       float: left;
       width: auto;
       font-size: 13px; }
     .cards-content .bug-div .bug-title {
-      font-size: 25px;
+      font-size: 22px;
       width: 100%; }
     .cards-content .bug-div .bug-content {
-      font-size: 15px;
-      line-height: 1.50; }
+      font-size: 14px;
+      line-height: 1.50;
+      width: 100%;
+      overflow: hidden; }
+      .cards-content .bug-div .bug-content dt {
+        float: left;
+        width: 20%;
+        font-weight: 600;
+        text-align: left;
+        margin-left: 10px; }
+      .cards-content .bug-div .bug-content dd {
+        float: left;
+        width: 70%;
+        text-align: left; }
   .cards-content .bug-div-0 {
-    background: #f3cbcb; }
-    .cards-content .bug-div-0 .bug-priority-0 {
-      color: #9e0d0d; }
+    border-left: 10px #ea8686 solid; }
   .cards-content .bug-div-1 {
-    background: #c9e2cb; }
-    .cards-content .bug-div-1 .bug-priority-1 {
-      color: #0b6f0b; }
+    border-left: 10px #9dc1a0 solid; }
   .cards-content .bug-div-2 {
-    background: #f0f5c5; }
-    .cards-content .bug-div-2 .bug-priority-2 {
-      color: #92920a; }
+    border-left: 10px #f0f5c5 solid; }
+
+.priorityRef {
+  width: 55%;
+  margin: 0 auto;
+  display: none; }
+  .priorityRef .bug-priority-0 {
+    color: #9e0d0d;
+    display: inline-block; }
+  .priorityRef .bug-priority-1 {
+    color: #0b6f0b;
+    display: inline-block; }
+  .priorityRef .bug-priority-2 {
+    color: #92920a;
+    display: inline-block; }
 
 .input-validate {
   border: 2px solid #F00; }
