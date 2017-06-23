@@ -1,0 +1,163 @@
+@import "variables";
+@import "base";
+
+	.header {
+		background: $base-color;
+		padding: 15px;
+		color: $white;
+
+		h1 {
+			font-size: $font-size-title;
+			margin: 0; 
+		}
+
+		h2 {
+			font-size: $font-size-subtitle;
+			margin: 0;
+		}
+	}
+
+	.form {
+		padding: 20px;
+
+		fieldset {
+			border: 0;
+			
+			.title-input {
+				width: 350px;
+				height: 30px;
+			}
+
+			.email-input {
+				width: 250px;
+				height: 30px;
+			}
+
+			.description-textarea {
+				width: 350px;
+				vertical-align: middle;
+			}
+
+			.select {
+				width: 250px;
+				height: 30px;
+			}
+
+			.options {
+				display: inline-table;
+				padding: 0;
+			}
+
+			.browser-label, .type-label {
+				vertical-align: top;
+			}
+
+			.radio-group, .checkbox-group {
+				display: inline-block;
+						
+				label {
+					display: block;
+					padding: 10px 0;
+				}
+			}
+		}
+
+		.button-content {
+			text-align: center;
+		
+		}
+	}
+	.cards-content {
+		text-align: center;
+		padding: 10px;
+
+		.bug-div {
+			width: 55%;
+    		margin: 0 auto;
+			border-bottom:  $border-div;
+			margin-top: 5px;
+			
+			.bug-button {
+				float: right;
+				border: none;
+			    font-size: 15px;
+				color: $bug-button-color;
+				font-weight: 600;
+				background: $white;
+				padding: 0;
+				cursor: pointer;
+			}
+			.bug-priority {
+				float: left;
+				width: auto;
+			    font-size: $font-size-priority;
+			}
+
+			.bug-title {
+				font-size: $font-size-bug-title;
+				width: 100%;
+			}
+
+			.bug-content {
+				font-size: $font-size-subtitle;
+				line-height: 1.50;
+				width: 100%;
+ 				overflow: hidden;
+
+				dt {
+					float: left;
+				    width: 20%;
+				    font-weight: 600;
+				    text-align: left;
+				    margin-left: 10px;
+				}
+				dd {
+					float: left;
+  					width: 70%;
+    				text-align: left;
+				}
+			}
+		}
+
+		.bug-div-0 {
+			border-left: $border-high;
+		}
+
+		.bug-div-1 {
+			border-left: $border-medium;
+		}
+
+		.bug-div-2 {
+			border-left: $border-low;
+		}
+	}
+
+	.priorityRef {
+		width: 55%;
+    	margin: 0 auto;
+    	display: none;
+
+		.bug-priority-0 {
+			color: $bug-priority-high;
+			display: inline-block;
+		}
+		.bug-priority-1 {
+			color: $bug-priority-medium;
+			display: inline-block;
+		}
+		.bug-priority-2 {
+			color: $bug-priority-low;
+			display: inline-block;
+		}
+
+	}
+	.input-validate {
+		border: $border-required;
+	}
+	.msg {
+		color: $required-color;
+	}
+
+
+	
+	

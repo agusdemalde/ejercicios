@@ -1,0 +1,26 @@
+body {
+	font-family: $font-family;
+}
+
+ div {
+	overflow: hidden;
+	padding: 10px;
+	
+	.form label {
+		display: inline-block;
+		width: 300px;
+		font-size: $font-size-base;
+
+		.required {
+			color: $required-color;
+		}
+	}
+}
+
+.btn {
+	background-color: $base-color;
+	color: $white;
+	padding: 5px 10px;
+	font-size: $font-size-base;
+	border: none;
+}

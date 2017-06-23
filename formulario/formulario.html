@@ -1,0 +1,78 @@
+
+<html>
+	<head>
+		<title>Formulario</title>
+		<link rel="stylesheet" type="text/css" href="./dist/css/main.css"> 
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Varela|" rel="stylesheet">
+	</head>
+	<body>
+		<header class="header">
+			<h1>Bug tracker</h1>
+			<h2>Report all bugs!</h2>
+		</header>
+		<div class="content">
+			<form name="form" id="form" class="form" method="post">
+				<fieldset>
+					<label for="title" class="label"> Bug Title <span class="required">*</span></label> 
+					<input class="title-input" type="text" id="title" name="title" >
+				</fieldset>
+				<fieldset>
+					<label for="email"> Email reporter <span class="required">*</span></label> 
+					<input class="email-input" type="text" id="email" name="email" >
+				</fieldset>
+				<fieldset>
+					<label for="description"> Issue Description <span class="required">*</span></label> 
+					<textarea class="description-textarea" id="description" name="description" cols="20" rows="4" ></textarea>
+				</fieldset>
+				<fieldset>
+					<label for="osystem"> Operating System <span class="required">*</span></label> 
+					<select class="select" id="osystem" name="osystem" >
+						<option disabled selected value=-1> -Select- </option>
+						<option value="w10"> W10 </option>
+						<option value="macos"> MacOS </option>
+						<option value="linux"> Linux </option>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label class="browser-label"> Browser <span class="required">*</span></label> 
+					<div class="radio-group">
+						<label><input type="radio" name="browser" value="explorer"/> Internet Explorer </label>
+						<label><input type="radio" name="browser" value="chrome"/> Chrome </label>
+						<label><input type="radio" name="browser" value="firefox"/> Firefox </label>
+						<label><input type="radio" name="browser" value="safari"/> Safari </label>
+						<label><input type="radio" name="browser" value="opera"/> Opera </label>
+						<label><input type="radio" name="browser" value="other" id="other"/> Other </label>
+						<input type="text" name="otherSO" id="otherSO" novalidate >
+					</div>
+				</fieldset>
+				<fieldset>
+					<label class="type-label"> Bug Type </label> 
+					<div class="checkbox-group">
+						<label for="ui"><input type="checkbox" name="type" id="ui" value="ui"/> UI </label>
+						<label for="security"><input type="checkbox" name="type" id="security" value="security"/> Security </label>
+						<label for="ux"><input type="checkbox" name="type" id="ux" value="ux"/> UX </label>
+						<label for="accesibility"><input type="checkbox" name="type" id="accesibility" value="accesibility"/> Accesibility </label>
+					</div>
+				</fieldset>
+				<fieldset>
+					<label class="priority"> Priority <span class="required">*</span></label> 
+					<select class="select" id="priority">
+						<option disabled selected value=-1> -Select- </option>
+						<option value=0> High </option>
+						<option value=1> Medium </option>
+						<option value=2> Low </option>
+					</select>
+				</fieldset>
+				<div class="button-content" id="submit-content">
+					<input class="btn" type="submit" name="submit" id="submit" value="Add Bug" />
+				</div>
+			</form>
+			<div class="priorityRef" id="priorityRef">
+				References: <label class="bug-priority-0"> High &nbsp; </label> <label class="bug-priority-1"> Medium &nbsp;</label><label class="bug-priority-2"> Low </label>
+			</div>
+			<div class="cards-content" id="cards-content">
+			</div>
+		</div>
+		<script type="text/javascript" src="./assets/scripts/main.js"></script>
+	</body>
+</html>
